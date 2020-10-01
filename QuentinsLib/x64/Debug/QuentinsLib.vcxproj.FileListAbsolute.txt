@@ -1,0 +1,2 @@
+C:\Users\Quentin\source\repos\QuentinsLib\x64\Debug\QuentinsLib.pdb
+C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\x64\Debug\QuentinsLib.pdb
