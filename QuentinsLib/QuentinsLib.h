@@ -20,9 +20,4 @@
 #define QUENTINSLIB_API __declspec(dllimport)
 #endif
 
-#include<iostream>
-using namespace std;
-
 extern "C++" unsigned int PGCD(unsigned int a, unsigned int b);
-
-extern "C++" int SaisirEntier(bool positif, string message);
