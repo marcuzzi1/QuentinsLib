@@ -29,7 +29,7 @@ unsigned int PGCD(unsigned int a, unsigned int b) {
 * #                                                                                          #
 * # Fonction retournant un entier permettant de faciliter l'étape de saisie et vérifications #
 * # Entrée : booléen permettant d'indiquer le signe (true pour positif / false pour le reste #
-* #			 Chaîne de caractères contenant le message à afficher                            #
+* #          Chaîne de caractères contenant le message à afficher                            #
 * # Sortie : entier                                                                          #
 * #                                                                                          #
 * ############################################################################################
