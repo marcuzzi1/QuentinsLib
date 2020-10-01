@@ -23,3 +23,17 @@ unsigned int PGCD(unsigned int a, unsigned int b) {
 	}
 	return a;
 }
+
+/*
+* #########################################################################
+* #                                                                       #
+* # Fonction retournant un booléen pour la vérification d'une date saisie #
+* # Entrée : 3 entiers (jj, mm, aaaa)                                     #
+* # Sortie : 1 booléen                                                    #
+* #                                                                       #
+* #########################################################################
+*/
+bool ValidDate(int jj, int mm, int aaaa) {
+
+	return true;
+}

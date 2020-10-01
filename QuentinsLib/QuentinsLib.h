@@ -21,3 +21,5 @@
 #endif
 
 extern "C++" unsigned int PGCD(unsigned int a, unsigned int b);
+
+extern "C++" bool ValidDate(int jj, int mm, int aaaa);
