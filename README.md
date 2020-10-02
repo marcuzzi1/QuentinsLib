@@ -150,4 +150,8 @@ int main() {
 
 > 6 : Ici, remplacer `C:\Users\....\QuentinsLib\x64\Debug\` par `Chemin_Vers_Le_Téléchargement\QuentinsLib\x64\Debug`
 
+![Recordit GIF](http://recordit.co/suPAP77Xce.gif)
+
 > 7 : Dans l'onglet `Propriétés de configuration -> Éditeur de liens -> entrée` allez chercher le ligne `Dépendances supplémentaires`, cliquez sur la flèche puis tapez `QuentinsLib.lib`
+
+![Recordit GIF](http://recordit.co/6cznfMh6mx.gif)
