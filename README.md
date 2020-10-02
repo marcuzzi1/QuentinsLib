@@ -12,24 +12,24 @@ Cette librairie contient des fonctions et procédures nécessaires à la réalis
 
 ### PGCD(unsigned int nb1, unsigned int nb2)
 
-///////////////////////////////////////////////////////
-//                                                   //
-// Fonction retournant le PGCD de 2 entiers positifs //
-// Entrée : 2 entiers non signés                     //
-// Sortie : Le PGCD des 2 entiers                    //
-//                                                   //
-///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////\n
+//                                                   //\n
+// Fonction retournant le PGCD de 2 entiers positifs //\n
+// Entrée : 2 entiers non signés                     //\n
+// Sortie : Le PGCD des 2 entiers                    //\n
+//                                                   //\n
+///////////////////////////////////////////////////////\n
 
-Procédure PGCD (nb1 : entier, nb2 : entier) retourne entier
-Début
-  Tant que a != b faire :
-    Si a > b alors :
-      a <- a - b
-    Sinon :
-      b <- b - a
-    Fin Si
-  Fin Faire
-  Retourne a
-Fin PGCD
+Procédure PGCD (nb1 : entier, nb2 : entier) retourne entier\n
+Début\n
+  Tant que a != b faire :\n
+    Si a > b alors :\n
+      a <- a - b\n
+    Sinon :\n
+      b <- b - a\n
+    Fin Si\n
+  Fin Faire\n
+  Retourne a\n
+Fin PGCD\n
 
 ## Liste des procédures : <a name="Liste-des-procédures"></a>
