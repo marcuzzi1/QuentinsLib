@@ -139,7 +139,11 @@ int main() {
 > Cette section décrit les étapes à suivre pour utiliser la librairie sans problème de compilation.
 
 > 1 : `Clic droit` sur le projet dans `l'explorateur de solution`
+
 > 2 : Sélectionner `Propritétés` dans le menu déroulant
-> 3 : 
+
+> 3 : Dans onglet `Propriétés de configuration -> C/C++ -> Général` allez chercher la ligne `Autres répertoires include`, cliquez sur la flèche, `modifier`
+
+> 4 : Ici, remplacer `C:\\Users\\....\\QuentinsLib\\QuentinsLib`
 
 ![Recoredit GIF](http://recordit.co/LPyHRNEN8G.gif)
