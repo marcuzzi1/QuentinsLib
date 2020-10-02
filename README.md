@@ -54,6 +54,6 @@ int main(){
 
 > Ce qui donne :
 
-![Recordit GIF](http://recordit.co/uWcXfK36cf)
+![Recordit GIF](http://recordit.co/uWcXfK36cf.gif)
 
 ## Liste des procédures : <a name="Liste-des-procédures"></a>
