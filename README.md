@@ -128,3 +128,7 @@ int main() {
 	return 0;
 }
 ```
+
+> Ce qui donne :
+
+![Recordit GIF](http://recordit.co/5NxA8jtdi5.gif)
