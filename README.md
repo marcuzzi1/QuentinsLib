@@ -33,4 +33,22 @@ Début
 Fin PGCD
 ```
 
+> Exemple de code appelant :
+
+```c++
+#include<iostream>
+using namespace std;
+#include<QuentinsLib.h>
+
+int main(){
+    int nb1, nb2;
+    cout << "Saisir les valeurs : " << endl;
+    cin >> nb1;
+    cin >> nb2;
+    // Ici on vérifie que les entiers sont positifs avant de faire le calcul
+    cout << "Leur PGCD est : " << PGCD(nb1, nb2) << endl;
+    return 0;
+}
+```
+
 ## Liste des procédures : <a name="Liste-des-procédures"></a>
