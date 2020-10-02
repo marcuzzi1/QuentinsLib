@@ -82,3 +82,46 @@ void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
 		}
 	}
 }
+
+void SaisirReel(bool signe, bool nul, string message, float& nbr) {
+
+}
+
+/*
+* #######################################################################################
+* #                                                                                     #
+* # Procédure contenant les instruction de la calculatrice (version si sinon imbriqués) #
+* # Entrée : opérande sour la forme d'un caractère                                      #
+* #			 2 nombres réels                                                            #
+* # Sortie : Rien                                                                       #
+* #                                                                                     #
+* #######################################################################################
+*/
+void CalculatriceV1(char operande, float nb1, float nb2) {
+	if (operande == '+') {
+		cout << nb1 << " + " << nb2 << " = " << nb1 + nb2 << endl;
+	}
+	else {
+		if (operande == '-') {
+			cout << nb1 << " - " << nb2 << " = " << nb1 - nb2 << endl;
+		}
+		else {
+			if (operande == '*') {
+				cout << nb1 << " * " << nb2 << " = " << nb1 * nb2 << endl;
+			}
+			else {
+				if (operande == '/') {
+					if (nb2 != 0) {
+						cout << nb1 << " / " << nb2 << " = " << nb1 / nb2 << endl;
+					}
+					else {
+						cout << "Pas de division par 0 ! " << endl;
+					}
+				}
+				else {
+					cout << "Opérande inconnue ! " << endl;
+				}
+			}
+		}
+	}
+}
