@@ -8,6 +8,6 @@ Cette librairie contient des fonctions et procédures nécessaires à la réalis
 1. [Liste des fonctions](#Liste-des-fonctions)
 2. [Liste des procédures](#Liste-des-procédures)
 
-## Liste des fonctions : 
+## Liste des fonctions : <a name="Liste-des-fonctions"></a>
 
-## Liste des procédures : 
+## Liste des procédures : <a name="Liste-des-procédures"></a>
