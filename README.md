@@ -19,6 +19,18 @@ Cette librairie contient des fonctions et procédures nécessaires à la réalis
 # Entrée : 2 entiers positifs                      #
 # Sortie : Leur PGCD                               #
 ####################################################
+
+Fonction PGCD (a : entier, b : entier) retourne entier
+Début
+    Tant que a != b faire :
+        Si a > b alors :
+            a <- a - b
+        Sinon :
+            b <- b - a
+        Fin Si
+    Fin Faire
+    Retourner a
+Fin PGCD
 ```
 
 ## Liste des procédures : <a name="Liste-des-procédures"></a>
