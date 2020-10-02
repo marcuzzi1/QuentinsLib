@@ -37,3 +37,48 @@ bool ValidDate(int jj, int mm, int aaaa) {
 
 	return true;
 }
+
+
+void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
+	if (signe) {
+		if (nul) {
+			cout << message;
+			cin >> nbr;
+		}
+		else {
+			do {
+				cout << message;
+				cin >> nbr;
+				if (nbr == 0) {
+					cout << "Les valeurs nulles ne sont pas acceptées ! " << endl;
+					system("pause");
+					system("cls");
+				}
+			} while (nbr == 0);
+		}
+	}
+	else {
+		if (nul) {
+			do {
+				cout << message;
+				cin >> nbr;
+				if (nbr < 0) {
+					cout << "Les valeurs négatives ne sont pas acceptées ! " << endl;
+					system("pause");
+					system("cls");
+				}
+			} while (nbr < 0);
+		}
+		else {
+			do {
+				cout << message;
+				cin >> nbr;
+				if (nbr <= 0) {
+					cout << "Les valeurs négatives ou nulles ne sont pas acceptées ! " << endl;
+					system("pause");
+					system("cls");
+				}
+			} while (nbr <= 0);
+		}
+	}
+}

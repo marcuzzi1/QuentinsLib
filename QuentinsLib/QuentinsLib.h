@@ -20,6 +20,11 @@
 #define QUENTINSLIB_API __declspec(dllimport)
 #endif
 
+#include<iostream>
+using namespace std;
+
 extern "C++" unsigned int PGCD(unsigned int a, unsigned int b);
 
 extern "C++" bool ValidDate(int jj, int mm, int aaaa);
+
+extern "C++" void SaisirEntier(bool signe, bool nul, string message, int& nbr);
