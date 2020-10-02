@@ -52,4 +52,7 @@ int main(){
 }
 ```
 
+> Ce qui donne :
+![Recordit GIF](http://recordit.co/uWcXfK36cf)
+
 ## Liste des procédures : <a name="Liste-des-procédures"></a>
