@@ -13,6 +13,12 @@ Cette librairie contient des fonctions et procédures nécessaires à la réalis
 ### PGCD(unsigned int nb1, unsigned int nb2)
 > Cette fonction retourne le PGCD de 2 entiers naturels.
 
-[![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger)
+```text
+####################################################
+# Fonction retournant le pgcd de 2 entier positifs #
+# Entrée : 2 entiers positifs                      #
+# Sortie : Leur PGCD                               #
+####################################################
+```
 
 ## Liste des procédures : <a name="Liste-des-procédures"></a>
