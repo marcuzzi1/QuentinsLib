@@ -9,6 +9,7 @@
     1. [Fonction PGCD](#PGCD)
 2. [Liste des procédures](#Liste-des-procédures)
     1. [Procédure SaisirEntier](#SaisirEntier)
+3. [Utiliser la librairie](#use_library)
 
 ## Liste des fonctions : <a name="Liste-des-fonctions"></a>
 
@@ -132,3 +133,13 @@ int main() {
 > Ce qui donne :
 
 ![Recordit GIF](http://recordit.co/5NxA8jtdi5.gif)
+
+## Utiliser la librairie QuentinsLib.lib <a name="use_library"></a>
+
+> Cette section décrit les étapes à suivre pour utiliser la librairie sans problème de compilation.
+
+> 1 : `Clic droit` sur le projet dans `l'explorateur de solution`
+> 2 : Sélectionner `Propritétés` dans le menu déroulant
+> 3 : 
+
+![Recoredit GIF](http://recordit.co/LPyHRNEN8G.gif)
