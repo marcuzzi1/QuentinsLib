@@ -1,16 +1,17 @@
 # QuentinsLib
 
-Les instructions d'appel de la bibliothèque dans un programme sont à venir prochainement.
+> Les instructions d'appel de la bibliothèque dans un programme sont à venir prochainement.
 
-Cette librairie contient des fonctions et procédures nécessaires à la réalisation de tâches simples mais souvent répétitives
+> Cette librairie contient des fonctions et procédures nécessaires à la réalisation de tâches simples mais souvent répétitives
 
 # Table des matières
 1. [Liste des fonctions](#Liste-des-fonctions)
+    1. [Fonction PGCD](#PGCD)
 2. [Liste des procédures](#Liste-des-procédures)
 
 ## Liste des fonctions : <a name="Liste-des-fonctions"></a>
 
-### PGCD(unsigned int nb1, unsigned int nb2)
+### PGCD(unsigned int nb1, unsigned int nb2) <a name="PGCD"></a>
 > Cette fonction retourne le PGCD de 2 entiers naturels.
 
 ```text
