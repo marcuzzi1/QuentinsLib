@@ -4,6 +4,10 @@ Les instructions d'appel de la bibliothèque dans un programme sont à venir pro
 
 Cette librairie contient des fonctions et procédures nécessaires à la réalisation de tâches simples mais souvent répétitives
 
+# Table des matières
+1. [Liste des fonctions](#Liste-des-fonctions)
+2. [Liste des procédures](#Liste-des-procédures)
+
 ## Liste des fonctions : 
 
 ## Liste des procédures : 
