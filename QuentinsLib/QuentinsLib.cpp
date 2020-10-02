@@ -50,7 +50,7 @@ void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
 				cout << message;
 				cin >> nbr;
 				if (nbr == 0) {
-					cout << "Les valeurs nulles ne sont pas acceptées ! " << endl;
+					cout << "Les valeurs nulles ne sont pas acceptees ! " << endl;
 					system("pause");
 					system("cls");
 				}
@@ -63,7 +63,7 @@ void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
 				cout << message;
 				cin >> nbr;
 				if (nbr < 0) {
-					cout << "Les valeurs négatives ne sont pas acceptées ! " << endl;
+					cout << "Les valeurs negatives ne sont pas acceptees ! " << endl;
 					system("pause");
 					system("cls");
 				}
@@ -74,7 +74,7 @@ void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
 				cout << message;
 				cin >> nbr;
 				if (nbr <= 0) {
-					cout << "Les valeurs négatives ou nulles ne sont pas acceptées ! " << endl;
+					cout << "Les valeurs negatives ou nulles ne sont pas acceptees ! " << endl;
 					system("pause");
 					system("cls");
 				}
