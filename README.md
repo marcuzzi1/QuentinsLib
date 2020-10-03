@@ -144,7 +144,7 @@ int main() {
 
 ![Recordit GIF](http://recordit.co/5NxA8jtdi5.gif)
 
-### void SaisirReel(bool signe, bool nul, string message, float& nbr) <a name="SaisirEntier"></a>
+### void SaisirReel(bool signe, bool nul, string message, float& nbr) <a name="SaisirReel"></a>
 
 > Cette procédure simplifie le code pour la saisie d'entiers avec des conditions particulières pour vos programmes
 
