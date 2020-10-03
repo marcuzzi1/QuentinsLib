@@ -7,6 +7,7 @@
     1. [Fonction PGCD](#PGCD)
 2. [Liste des procédures](#Liste-des-procédures)
     1. [Procédure SaisirEntier](#SaisirEntier)
+    2. [Procédure SaisirReel](#SaisirReel)
 3. [Utiliser la librairie](#use_library)
 
 ## Liste des fonctions : <a name="Liste-des-fonctions"></a>
