@@ -63,6 +63,17 @@ int main(){
 > Cette procédure simplifie le code pour la saisie d'entiers avec des conditions particulières pour vos programmes
 
 ```text
+##############################################################################
+#                                                                            #
+# Procédure de saisie et de vérification d'un entier                         #
+# Entrée : Un booléen déterminant le signe                                   #
+#          Un booléen déterminant si les valeurs nulles sont acceptée ou non #
+#          Une chaîne de caractères contenant le message à afficher          #
+# Sortie : rien                                                              #
+# Entrée/Sortie : le nombre réel à saisir                                    #
+#                                                                            #
+##############################################################################
+
 Procédure SaisirEntier(signe : booléen, nul : booléen, message : chaîne de caractères; nbr : entier)
 Début
     Si (signe) alors :
@@ -131,6 +142,87 @@ int main() {
 > Ce qui donne :
 
 ![Recordit GIF](http://recordit.co/5NxA8jtdi5.gif)
+
+### void SaisirReel(bool signe, bool nul, string message, float& nbr) <a name="SaisirEntier"></a>
+
+> Cette procédure simplifie le code pour la saisie d'entiers avec des conditions particulières pour vos programmes
+
+```text
+##############################################################################
+#                                                                            #
+# Procédure de saisie et de vérification d'un réel                           #
+# Entrée : un booléen déterminant le signe                                   #
+#          un boléen déterminant si les valeurs nulles sont acceptées ou non #
+#          une chaîne de caractères contenant le message à afficher          #
+# Sortie : Rien                                                              #
+# Entrée/Sortie : le nombre réel à saisir                                    #
+#                                                                            #
+##############################################################################
+
+Procédure SaisirReel(signe : booléen, nul : booléen, message : chaîne de caractères; nbr : réel)
+Début
+    Si (signe) alors :
+        Si (nul) alors :
+            Afficher message
+            Saisir nbr
+        Sinon :
+            Répéter :
+                Afficher message
+                Saisir nbr
+                Si nbr = 0 alors :
+                    Afficher "Les valeurs nulles ne sont pas acceptees"
+                Fin Si
+            Tant que nbr = 0
+        Fin Si
+    Sinon :
+        Si (nul) alors :
+            Répéter :
+                Afficher message
+                Saisir nbr
+                Si nbr < 0 alors :
+                    Afficher "Les valeurs negatives ne sont pas acceptees"
+                Fin Si
+            Tant que nbr < 0
+        Sinon :
+            Répéter :
+                Afficher message
+                Saisir nbr
+                Si nbr <= 0 alors :
+                    Afficher "Les valeurs negatives ou nulles ne sont pas acceptees"
+                Fin Si
+            Tant que nbr <= 0
+        Fin Si
+    Fin Si
+Fin SaisirReel
+```
+
+> Exemple de code appelant : 
+
+```c++
+#include<iostream>
+using namespace std;
+#include<Windows.h>
+#include<QuentinsLib.h>
+
+int main() {
+	// Ajout d'une ligne permettant d'afficher les accents en console :
+	locale::global(locale{ "" });
+	// Les 2 lignes suivantes permettent de maximiser la taille de la console sur l'écran
+	HWND hwnd = GetForegroundWindow();
+	ShowWindow(hwnd, SW_MAXIMIZE);
+
+	float nombre;
+
+	SaisirReel(false, true, "Saisir un nombre réel : ", nombre);
+
+    cout << "Vous avez saisi : " << nombre << endl;
+	return 0;
+}
+```
+
+> Ce qui donne : 
+
+![Recordit GIF](http://recordit.co/NJiozKTsmN.gif)
 
 ## Utiliser la librairie QuentinsLib.lib <a name="use_library"></a>
 
