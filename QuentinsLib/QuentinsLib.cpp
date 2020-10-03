@@ -38,7 +38,18 @@ bool ValidDate(int jj, int mm, int aaaa) {
 	return true;
 }
 
-
+/*
+* ##############################################################################
+* #                                                                            #
+* # Procédure de saisie et de vérification d'un entier                         #
+* # Entrée : Un booléen déterminant le signe                                   #
+* #          Un booléen déterminant si les valeurs nulles sont acceptée ou non #
+* #          Une chaîne de caractères contenant le message à afficher          #
+* # Sortie : rien                                                              #
+* # Entrée/Sortie : le nombre réel à saisir                                    #
+* #                                                                            #
+* ##############################################################################
+*/
 void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
 	if (signe) {
 		if (nul) {
@@ -83,8 +94,60 @@ void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
 	}
 }
 
+/*
+* ##############################################################################
+* #                                                                            #
+* # Procédure de saisie et de vérification d'un réel                           #
+* # Entrée : un booléen déterminant le signe                                   #
+* #          un boléen déterminant si les valeurs nulles sont acceptées ou non #
+* #          une chaîne de caractères contenant le message à afficher          #
+* # Sortie : Rien                                                              #
+* # Entrée/Sortie : le nombre réel à saisir                                    #
+* #                                                                            #
+* ##############################################################################
+*/
 void SaisirReel(bool signe, bool nul, string message, float& nbr) {
-
+	if (signe) {
+		if (nul) {
+			cout << message;
+			cin >> nbr;
+		}
+		else {
+			do {
+				cout << message;
+				cin >> nbr;
+				if (nbr == 0) {
+					cout << "Les valeurs nulles ne sont pas acceptees." << endl;
+					system("pause");
+					system("cls");
+				}
+			} while (nbr == 0);
+		}
+	}
+	else {
+		if (nul) {
+			do {
+				cout << message;
+				cin >> nbr;
+				if (nbr < 0) {
+					cout << "Les valeurs negatives ne sont pas acceptees." << endl;
+					system("pause");
+					system("cls");
+				}
+			} while (nbr < 0);
+		}
+		else {
+			do {
+				cout << message;
+				cin >> nbr;
+				if (nbr <= 0) {
+					cout << "Les valeurs negatives ou nulles ne sont pas acceptees." << endl;
+					system("pause");
+					system("cls");
+				}
+			} while (nbr <= 0);
+		}
+	}
 }
 
 /*
