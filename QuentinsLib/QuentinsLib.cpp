@@ -188,3 +188,38 @@ void CalculatriceV1(char operande, float nb1, float nb2) {
 		}
 	}
 }
+
+/*
+* ##########################################################################
+* #                                                                        #
+* # Procédure contenant les instruction de la calculatrice (version selon) #
+* # Entrée : opérande sour la forme d'un caractère                         #
+* #			 2 nombres réels                                               #
+* # Sortie : Rien                                                          #
+* #                                                                        #
+* ##########################################################################
+*/
+void CalculatriceV2(char operande, float nb1, float nb2) {
+	switch (operande) {
+	case '+' :
+		cout << nb1 << " + " << nb2 << " = " << nb1 + nb2 << endl;
+		break;
+	case '-':
+		cout << nb1 << " - " << nb2 << " = " << nb1 - nb2 << endl;
+		break;
+	case '*':
+		cout << nb1 << " * " << nb2 << " = " << nb1 * nb2 << endl;
+		break;
+	case '/':
+		if (nb2 != 0) {
+			cout << nb1 << " / " << nb2 << " = " << nb1 / nb2 << endl;
+		}
+		else {
+			cout << "Pas de division par 0 !" << endl;
+		}
+		break;
+	default:
+		cout << "Operande inconnue !" << endl;
+		break;
+	}
+}

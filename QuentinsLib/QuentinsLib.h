@@ -32,3 +32,5 @@ extern "C++" void SaisirEntier(bool signe, bool nul, string message, int& nbr);
 extern "C++" void SaisirReel(bool signe, bool nul, string message, float& nbr);
 
 extern "C++" void CalculatriceV1(char operande, float nb1, float nb2);
+
+extern "C++" void CalculatriceV2(char operande, float nb1, float nb2);
