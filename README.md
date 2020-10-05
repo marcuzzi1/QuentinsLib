@@ -8,6 +8,7 @@
 2. [Liste des procédures](#Liste-des-procédures)
     1. [Procédure SaisirEntier](#SaisirEntier)
     2. [Procédure SaisirReel](#SaisirReel)
+    3. [Procédure CalculatriceV1](#calcV1)
 3. [Utiliser la librairie](#use_library)
 
 ## Liste des fonctions : <a name="Liste-des-fonctions"></a>
@@ -144,7 +145,7 @@ int main() {
 
 ![Recordit GIF](http://recordit.co/5NxA8jtdi5.gif)
 
-### void SaisirReel(bool signe, bool nul, string message, float& nbr) <a name="SaisirReel"></a>
+### SaisirReel(bool signe, bool nul, string message, float& nbr) <a name="SaisirReel"></a>
 
 > Cette procédure simplifie le code pour la saisie d'entiers avec des conditions particulières pour vos programmes
 
@@ -224,6 +225,81 @@ int main() {
 > Ce qui donne : 
 
 ![Recordit GIF](http://recordit.co/NJiozKTsmN.gif)
+
+### void CalculatriceV1(char operande, float nb1, float nb2) <a name="calcV1"></a>
+
+> Cette procédure gère la fonctionnalité de calculatrice demandée avec un `si alors sinon` imbriqué
+
+```text
+#######################################################################################
+#                                                                                     #
+# Procédure contenant les instruction de la calculatrice (version si sinon imbriqués) #
+# Entrée : opérande sour la forme d'un caractère                                      #
+#			 2 nombres réels                                                            #
+# Sortie : Rien                                                                       #
+#                                                                                     #
+#######################################################################################
+
+Procédure CalculatriceV1(operande : caractère, nb1 : réel, nb2 : réel;)
+Début
+    Si operande = '+' alors :
+        Afficher nb1, " + ", nb2, " = ", nb1 + nb2
+    Sinon
+        Si operande = '-' alors :
+            Afficher nb1, " - ", nb2, " = ", nb1 - nb2
+        Sinon : 
+            Si operande = '*' alors :
+                Afficher nb1, " * ", nb2, " = ", nb1 * nb2
+            Sinon :
+                Si operande = '/' alors : 
+                    Si nb2 != 0 alors :
+                        Afficher nb1, " / ", nb2, " = ", nb1 / nb2
+                    Sinon : 
+                        Afficher "Pas de division par 0 !"
+                    Fin Si
+                Sinon :
+                    Afficher "Operande inconnue ! "
+                Fin Si
+            Fin Si
+        Fin Si
+    Fin Si
+Fin CalculatriceV1
+```
+
+> Exemple de programme appelant : 
+
+```c++
+#include<iostream>
+using namespace std;
+#include<Windows.h>
+#include<QuentinsLib.h>
+
+int main() {
+	// Ajout d'une ligne permettant d'afficher les accents en console :
+	locale::global(locale{ "" });
+	// Les 2 lignes suivantes permettent de maximiser la taille de la console sur l'écran
+	HWND hwnd = GetForegroundWindow();
+	ShowWindow(hwnd, SW_MAXIMIZE);
+
+	float nb1;
+	float nb2;
+	char operande;
+
+	SaisirReel(true, true, "Saisir un premier nombre : ", nb1);
+	SaisirReel(true, true, "Saisir un deuxième nombre : ", nb2);
+
+	cout << "Saisir l'opération à effectuer (+, -, /, *) : ";
+	cin >> operande;
+
+	CalculatriceV1(operande, nb1, nb2);
+
+	return 0;
+}
+```
+
+> Ce qui donne :
+
+![Recordit GIF](http://recordit.co/mwAAWW9NdE.gif)
 
 ## Utiliser la librairie QuentinsLib.lib <a name="use_library"></a>
 

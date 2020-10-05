@@ -182,7 +182,7 @@ void CalculatriceV1(char operande, float nb1, float nb2) {
 					}
 				}
 				else {
-					cout << "Opérande inconnue ! " << endl;
+					cout << "Operande inconnue ! " << endl;
 				}
 			}
 		}
