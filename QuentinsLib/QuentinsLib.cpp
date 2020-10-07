@@ -268,3 +268,10 @@ void CalculatriceV2(char operande, float nb1, float nb2) {
 		break;
 	}
 }
+
+// Définition d'une structure Date :
+typedef struct Date {
+	int day; // Jour compris entre 1 et 31 maximum
+	int month; // Mois compris entre 1 et 12
+	int year; // Année supérieure à 0
+};
