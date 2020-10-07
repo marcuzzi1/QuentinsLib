@@ -27,6 +27,8 @@ extern "C++" unsigned int PGCD(unsigned int a, unsigned int b);
 
 extern "C++" bool ValidDate(int jj, int mm, int aaaa);
 
+extern "C++" bool EstBissextile(int aaaa);
+
 extern "C++" void SaisirEntier(bool signe, bool nul, string message, int& nbr);
 
 extern "C++" void SaisirReel(bool signe, bool nul, string message, float& nbr);

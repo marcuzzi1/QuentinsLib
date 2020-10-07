@@ -5,6 +5,7 @@
 # Table des matières
 1. [Liste des fonctions](#Liste-des-fonctions)
     1. [Fonction PGCD](#PGCD)
+    2. [Fonction ValidDate](#ValidDate)
 2. [Liste des procédures](#Liste-des-procédures)
     1. [Procédure SaisirEntier](#SaisirEntier)
     2. [Procédure SaisirReel](#SaisirReel)
@@ -15,6 +16,7 @@
 ## Liste des fonctions : <a name="Liste-des-fonctions"></a>
 
 ### PGCD(unsigned int nb1, unsigned int nb2) <a name="PGCD"></a>
+
 > Cette fonction retourne le PGCD de 2 entiers naturels.
 
 ```text
@@ -58,6 +60,115 @@ int main(){
 > Ce qui donne :
 
 ![Recordit GIF](http://recordit.co/uWcXfK36cf.gif)
+
+### bool ValidDate(int jj, int mm, int aaaa) <a name="ValidDate"></a>
+
+> Cete fonction **dépendante de<a href="#EstBissextile"> la fonction ci-dessous**</a> permet de valider la saisie d'une date saisie sous la forme jj/mm/aaaa
+
+```text
+#########################################################################
+#                                                                       #
+# Fonction retournant un booléen pour la vérification d'une date saisie #
+# Entrée : 3 entiers (jj, mm, aaaa)                                     #
+# Sortie : 1 booléen                                                    #
+#                                                                       #
+#########################################################################
+
+Fonction ValidDate(jj : entier, mm : entier, aaaa : entier;) retourne booléen
+Début
+    Si (mm = 1) ou (mm = 3) ou (mm = 5) ou (mm = 7) ou (mm = 8) ou (mm = 10) ou (mm = 12) alors :
+        Si (jj > 31) alors :
+            Retourner faux
+        Fin Si
+    Sinon :
+        Si (mm != 2) et (mm < 12) alors :
+            Si (jj > 30) alors :
+                Retourner faux
+            Fin Si
+        Sinon :
+            Si (mm = 2) alors :
+                Si (EstBissextile(aaaa)) alors :
+                    Si (jj > 29) alors :
+                        Retourner faux
+                    Fin Si
+                Sinon :
+                    Si (jj > 28) alors :
+                        Retourner faux
+                    Fin Si
+                Fin Si
+            Sinon :
+                Retourner faux
+            Fin Si
+        Fin Si
+    Fin Si
+    Retourner vrai
+Fin ValidDate
+```
+
+> Exemple de programme appelant :
+
+```c++
+#include<iostream>
+using namespace std;
+#include<Windows.h>
+#include<QuentinsLib.h>
+
+int main() {
+	// Ajout d'une ligne permettant d'afficher les accents en console :
+	locale::global(locale{ "" });
+	// Les 2 lignes suivantes permettent de maximiser la taille de la console sur l'écran
+	HWND hwnd = GetForegroundWindow();
+	ShowWindow(hwnd, SW_MAXIMIZE);
+
+	int jour, mois, annee;
+
+	do {
+		cout << "Saisir le jour : ";
+		cin >> jour;
+		cout << "Saisir le mois : ";
+		cin >> mois;
+		cout << "Saisir l'année : ";
+		cin >> annee;
+	} while (jour < 1 || mois < 1 || annee < 0);
+
+	if (ValidDate(jour, mois, annee)) {
+		cout << "La date saisie est valide." << endl;
+	}
+	else {
+		cout << "La date saisie est invalide." << endl;
+	}
+
+	system("pause");
+	return 0;
+}
+```
+
+> Ce qui donne :
+
+![Recordit GIF](http://recordit.co/LVaCxX3siC.gif)
+
+### bool EstBissextile(int aaaa) <a name="EstBissextile"></a>
+
+> Cette fonction permet de vérifier si une année saisie est bissextile ou non
+
+```text
+###################################################################
+#                                                                 #
+# Fonction retournant un booléen à vrai si l'année est bissextile #
+# et faux si l'année ne l'est pas                                 #
+# Entrée : Un entier contenant l'année                            #
+# Sortie : Un booléen                                             #
+#                                                                 #
+###################################################################
+
+Fonction EstBissextile(aaaa : entier;) retourne booléen
+Début
+    Si ((aaaa mod 4 = 0) et (aaaa mod 100 != 0)) ou (aaaa mod 400 = 0) alors :
+        Retourner Vrai
+    Fin Si
+    Retourner faux
+Fin EstBissextile
+```
 
 ## Liste des procédures : <a name="Liste-des-procédures"></a>
 
@@ -236,7 +347,7 @@ int main() {
 #                                                                                     #
 # Procédure contenant les instruction de la calculatrice (version si sinon imbriqués) #
 # Entrée : opérande sour la forme d'un caractère                                      #
-#			 2 nombres réels                                                            #
+#			 2 nombres réels                                                          #
 # Sortie : Rien                                                                       #
 #                                                                                     #
 #######################################################################################

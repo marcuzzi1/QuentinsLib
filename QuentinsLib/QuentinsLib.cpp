@@ -34,8 +34,53 @@ unsigned int PGCD(unsigned int a, unsigned int b) {
 * #########################################################################
 */
 bool ValidDate(int jj, int mm, int aaaa) {
-
+	if (mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12) {
+		if (jj > 31) {
+			return false;
+		}
+	}
+	else {
+		if (mm != 2 && mm < 12) {
+			if (jj > 30) {
+				return false;
+			}
+		}
+		else {
+			if (mm == 2) {
+				if (EstBissextile(aaaa)) {
+					if (jj > 29) {
+						return false;
+					}
+				}
+				else {
+					if (jj > 28) {
+						return false;
+					}
+				}
+			}
+			else {
+				return false;
+			}
+		}
+	}
 	return true;
+}
+
+/*
+* ###################################################################
+* #                                                                 #
+* # Fonction retournant un booléen à vrai si l'année est bissextile #
+* # et faux si l'année ne l'est pas                                 #
+* # Entrée : Un entier contenant l'année                            #
+* # Sortie : Un booléen                                             #
+* #                                                                 #
+* ###################################################################
+*/
+bool EstBissextile(int aaaa) {
+	if ((aaaa % 4 == 0 && aaaa % 100 != 0) || aaaa % 400 == 0) {
+		return true;
+	}
+	return false;
 }
 
 /*
