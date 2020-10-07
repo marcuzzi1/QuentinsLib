@@ -6,6 +6,7 @@
 1. [Liste des fonctions](#Liste-des-fonctions)
     1. [Fonction PGCD](#PGCD)
     2. [Fonction ValidDate](#ValidDate)
+    3. [Fonction EstBissextile](#EstBissextile)
 2. [Liste des procédures](#Liste-des-procédures)
     1. [Procédure SaisirEntier](#SaisirEntier)
     2. [Procédure SaisirReel](#SaisirReel)
