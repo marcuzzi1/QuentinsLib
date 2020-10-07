@@ -348,7 +348,7 @@ int main() {
 #                                                                                     #
 # Procédure contenant les instruction de la calculatrice (version si sinon imbriqués) #
 # Entrée : opérande sour la forme d'un caractère                                      #
-#			 2 nombres réels                                                          #
+#          2 nombres réels                                                            #
 # Sortie : Rien                                                                       #
 #                                                                                     #
 #######################################################################################
