@@ -200,7 +200,7 @@ void SaisirReel(bool signe, bool nul, string message, float& nbr) {
 * #                                                                                     #
 * # Procédure contenant les instruction de la calculatrice (version si sinon imbriqués) #
 * # Entrée : opérande sour la forme d'un caractère                                      #
-* #			 2 nombres réels                                                            #
+* #          2 nombres réels                                                            #
 * # Sortie : Rien                                                                       #
 * #                                                                                     #
 * #######################################################################################
@@ -239,7 +239,7 @@ void CalculatriceV1(char operande, float nb1, float nb2) {
 * #                                                                        #
 * # Procédure contenant les instruction de la calculatrice (version selon) #
 * # Entrée : opérande sour la forme d'un caractère                         #
-* #			 2 nombres réels                                               #
+* #	         2 nombres réels                                               #
 * # Sortie : Rien                                                          #
 * #                                                                        #
 * ##########################################################################
