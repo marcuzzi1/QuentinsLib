@@ -83,6 +83,15 @@ bool EstBissextile(int aaaa) {
 	return false;
 }
 
+Date DateSuivante(Date date) {
+	Date suivante = date;
+	int jour = suivante.day;
+	int mois = suivante.month;
+	int annee = suivante.year;
+	if (mois == 1 || mois == 3)
+	return suivante;
+}
+
 /*
 * ##############################################################################
 * #                                                                            #

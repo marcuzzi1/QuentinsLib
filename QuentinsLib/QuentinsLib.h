@@ -29,6 +29,8 @@ extern "C++" bool ValidDate(int jj, int mm, int aaaa);
 
 extern "C++" bool EstBissextile(int aaaa);
 
+extern "C++" Date DateSuivante(Date date);
+
 extern "C++" void SaisirEntier(bool signe, bool nul, string message, int& nbr);
 
 extern "C++" void SaisirReel(bool signe, bool nul, string message, float& nbr);
