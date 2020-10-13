@@ -23,6 +23,13 @@
 #include<iostream>
 using namespace std;
 
+// Définition d'une structure Date :
+typedef struct Date {
+	int day; // Jour compris entre 1 et 31 maximum
+	int month; // Mois compris entre 1 et 12
+	int year; // Année supérieure à 0
+};
+
 extern "C++" unsigned int PGCD(unsigned int a, unsigned int b);
 
 extern "C++" bool ValidDate(int jj, int mm, int aaaa);

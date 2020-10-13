@@ -12,6 +12,7 @@
 * #                                                     #
 * #######################################################
 */
+// Attention ici les entiers sont non signés, veuillez vous assurer lors de la saisie qu'ils sont positifs, au risque d'avoir un résultat éronné
 unsigned int PGCD(unsigned int a, unsigned int b) {
 	while (a != b) {
 		if (a > b) {
@@ -28,12 +29,12 @@ unsigned int PGCD(unsigned int a, unsigned int b) {
 * #########################################################################
 * #                                                                       #
 * # Fonction retournant un booléen pour la vérification d'une date saisie #
-* # Entrée : 3 entiers (jj, mm, aaaa)                                     #
+* # Entrée : une date sous le format de la structure de données Date      #
 * # Sortie : 1 booléen                                                    #
 * #                                                                       #
 * #########################################################################
 */
-bool ValidDate(int jj, int mm, int aaaa) {
+bool ValidDate(int jj, int mm, int aaaa) { // À REFAIRE !
 	if (mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12) {
 		if (jj > 31) {
 			return false;
@@ -76,7 +77,7 @@ bool ValidDate(int jj, int mm, int aaaa) {
 * #                                                                 #
 * ###################################################################
 */
-bool EstBissextile(int aaaa) {
+bool EstBissextile(int aaaa) { // À REFAIRE !
 	if ((aaaa % 4 == 0 && aaaa % 100 != 0) || aaaa % 400 == 0) {
 		return true;
 	}
@@ -104,7 +105,7 @@ Date DateSuivante(Date date) {
 * #                                                                            #
 * ##############################################################################
 */
-void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
+void SaisirEntier(bool signe, bool nul, string message, int& nbr) { // À REFAIRE !
 	if (signe) {
 		if (nul) {
 			cout << message;
@@ -160,7 +161,7 @@ void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
 * #                                                                            #
 * ##############################################################################
 */
-void SaisirReel(bool signe, bool nul, string message, float& nbr) {
+void SaisirReel(bool signe, bool nul, string message, float& nbr) { // À REFAIRE !
 	if (signe) {
 		if (nul) {
 			cout << message;
@@ -278,9 +279,3 @@ void CalculatriceV2(char operande, float nb1, float nb2) {
 	}
 }
 
-// Définition d'une structure Date :
-typedef struct Date {
-	int day; // Jour compris entre 1 et 31 maximum
-	int month; // Mois compris entre 1 et 12
-	int year; // Année supérieure à 0
-};
