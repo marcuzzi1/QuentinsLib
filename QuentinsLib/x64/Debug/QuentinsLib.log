@@ -1,9 +1,4 @@
 ﻿  QuentinsLib.cpp
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'Date' quand aucune variable n'est déclarée
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.h(49,33): warning C4091: 'typedef ' : ignoré à gauche de 'Date' quand aucune variable n'est déclarée
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(40,7): error C2065: 'jj' : identificateur non déclaré
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(46,8): error C2065: 'jj' : identificateur non déclaré
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(51,8): error C2065: 'mm' : identificateur non déclaré
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(52,23): error C2065: 'dat' : identificateur non déclaré
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(53,10): error C2065: 'jj' : identificateur non déclaré
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(58,10): error C2065: 'jj' : identificateur non déclaré
+C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.h(32,2): warning C4091: 'typedef ' : ignoré à gauche de 'Date' quand aucune variable n'est déclarée
+C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.h(50,33): warning C4091: 'typedef ' : ignoré à gauche de 'Date' quand aucune variable n'est déclarée
+  QuentinsLib.vcxproj -> C:\Users\Quentin\source\repos\QuentinsLib\x64\Debug\QuentinsLib.lib

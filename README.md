@@ -53,7 +53,7 @@
 
 ### unsigned int PGCD(unsigned int a, unsigned int b) <a name="pgcd"></a>
 
-> Retourne le PGCD de deux nombres *entiers ~non signés~*
+> Retourne le PGCD de deux nombres *entiers _non signés_*
 
 ```text
 #######################################################
@@ -96,6 +96,8 @@ unsigned int PGCD(unsigned int a, unsigned int b) {
 ![Recordit GIF](http://recordit.co/6WOSjMCtPr.gif)
 
 ## Manipulations de dates : <a name="dates"></a>
+
+> Une procédure de saisie et de contrôle d'une date est à venir
 
 ### Structure Date : <a name="date_struct"</a>
 
@@ -158,5 +160,40 @@ Fin ValidDate
 ```
 
 ```c++
-
+bool ValidDate(Date date) {
+	if (date.month == 1 || date.month == 3 || date.month == 5 || date.month == 7 || date.month == 8 || date.month == 10 || date.month == 12) {
+		if (date.day > 31) {
+			return false;
+		}
+	}
+	else {
+		if (date.month != 2 && date.month < 12) {
+			if (date.day > 30) {
+				return false;
+			}
+		}
+		else {
+			if (date.month == 2) {
+				if (EstBissextile(date.year)) {
+					if (date.day > 29) {
+						return false;
+					}
+				}
+				else {
+					if (date.day > 28) {
+						return false;
+					}
+				}
+			}
+			else {
+				return false;
+			}
+		}
+	}
+	return true;
+}
 ```
+
+> Exemple de résultat : 
+
+![Recordit GIF](http://recordit.co/9kNhJrbO1L.gif)
