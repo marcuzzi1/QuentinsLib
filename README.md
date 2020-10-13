@@ -7,6 +7,9 @@
 1. [Importer et utiliser la librairie](#use_library)
 2. [Fonctions mathématiques](#maths)
 	1. [unsigned int PGCD(unsigned int a, unsigned int b)](#pgcd)
+3. [Manipulation de dates](#dates)
+	1. [Structure Date](#date_struct)
+	2. [ValidDate](#valid_date)
 
 ## Utiliser la librairie QuentinsLib.lib <a name="use_library"></a>
 
@@ -88,6 +91,72 @@ unsigned int PGCD(unsigned int a, unsigned int b) {
 }
 ```
 
-> Exemple de résultat lors de l'appel de la fonction : 
+> Exemple de résultat : 
 
 ![Recordit GIF](http://recordit.co/6WOSjMCtPr.gif)
+
+## Manipulations de dates : <a name="dates"></a>
+
+### Structure Date : <a name="date_struct"</a>
+
+> Cette structure est utilisée dans toutes les fonctions et procédures se rapportant à une date.
+
+```c++
+typedef struct Date {
+	int day; // Jour compris entre 1 et 31 maximum
+	int month; // Mois compris entre 1 et 12
+	int year; // Année supérieure à 0
+};
+```
+
+> Le choix des valeurs négatives pour l'année peut très bien être pris par l'utilisateur.
+
+### bool ValidDate(Date date) <a name="valid_date"></a>
+
+> Cette fonction retourne un booléen et permet donc d'en déterminer si une date saisir par l'utilisateur est valide ou non
+
+> Elle est *dépendante* de la fonction `<a href="bissext">EstBissextile(int annee)</a>`
+
+```text
+#########################################################################
+#                                                                       #
+# Fonction retournant un booléen pour la vérification d'une date saisie #
+# Entrée : une date sous le format de la structure de données Date      #
+# Sortie : 1 booléen                                                    #
+#                                                                       #
+#########################################################################
+
+Fonction ValidDate (Date date;) retourne booléen
+Début
+	Si (date.month = 1 ou date.month = 3 ou date.month = 5 ou date.month = 7 ou date.month = 8 ou date.month = 10 ou date.month = 12) alors :
+		Si (date.day > 31) alors :
+			Retourne faux
+		Fin Si
+	Sinon :
+		Si (date.month != 2 et date.month < 12) alors :
+			Si (date.day > 30) alors :
+				Retourne faux
+			Fin Si
+		Sinon :
+			Si (date.month = 2) alors :
+				Si (EstBissextile(date.year)) alors :
+					Si (date.day > 29) alors :
+						Retourne faux
+					Fin Si
+				Sinon :
+					Si (date.day > 28) alors :
+						Retourne faux
+					Fin Si
+				Fin Si
+			Sinon :
+				Retourne faux
+			Fin Si
+		Fin Si
+	Fin Si
+	Retourne vrai
+Fin ValidDate
+```
+
+```c++
+
+```

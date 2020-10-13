@@ -22,6 +22,7 @@
 
 #include<iostream>
 using namespace std;
+#include<limits>
 
 // Définition d'une structure Date :
 typedef struct Date {
@@ -32,7 +33,7 @@ typedef struct Date {
 
 extern "C++" unsigned int PGCD(unsigned int a, unsigned int b);
 
-extern "C++" bool ValidDate(int jj, int mm, int aaaa);
+extern "C++" bool ValidDate(Date date);
 
 extern "C++" bool EstBissextile(int aaaa);
 

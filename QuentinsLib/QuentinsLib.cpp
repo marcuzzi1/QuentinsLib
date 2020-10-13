@@ -35,27 +35,27 @@ unsigned int PGCD(unsigned int a, unsigned int b) {
 * #########################################################################
 */
 // Veuillez utiliser la structure de données Date pour pouvoir faire appel à cette fonction
-bool ValidDate(int jj, int mm, int aaaa) { // À REFAIRE !
-	if (mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12) {
-		if (jj > 31) {
+bool ValidDate(Date date) {
+	if (date.month == 1 || date.month == 3 || date.month == 5 || date.month == 7 || date.month == 8 || date.month == 10 || date.month == 12) {
+		if (date.day > 31) {
 			return false;
 		}
 	}
 	else {
-		if (mm != 2 && mm < 12) {
-			if (jj > 30) {
+		if (date.month != 2 && date.month < 12) {
+			if (date.day > 30) {
 				return false;
 			}
 		}
 		else {
-			if (mm == 2) {
-				if (EstBissextile(aaaa)) {
-					if (jj > 29) {
+			if (date.month == 2) {
+				if (EstBissextile(date.year)) {
+					if (date.day > 29) {
 						return false;
 					}
 				}
 				else {
-					if (jj > 28) {
+					if (date.day > 28) {
 						return false;
 					}
 				}
@@ -78,8 +78,9 @@ bool ValidDate(int jj, int mm, int aaaa) { // À REFAIRE !
 * #                                                                 #
 * ###################################################################
 */
-bool EstBissextile(int aaaa) { // À REFAIRE !
-	if ((aaaa % 4 == 0 && aaaa % 100 != 0) || aaaa % 400 == 0) {
+// Cette fonction utilise seulement l'année envoyée avec date.year
+bool EstBissextile(int annee) {
+	if ((annee % 4 == 0 && annee % 100 != 0) || annee % 400 == 0) {
 		return true;
 	}
 	return false;
@@ -87,9 +88,6 @@ bool EstBissextile(int aaaa) { // À REFAIRE !
 
 Date DateSuivante(Date date) {
 	Date suivante = date;
-	int jour = suivante.day;
-	int mois = suivante.month;
-	int annee = suivante.year;
 	return suivante;
 }
 
