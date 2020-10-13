@@ -99,7 +99,7 @@ unsigned int PGCD(unsigned int a, unsigned int b) {
 
 > Une procédure de saisie et de contrôle d'une date est à venir
 
-### Structure Date : <a name="date_struct"</a>
+### Structure Date : <a name="date_struct"></a>
 
 > Cette structure est utilisée dans toutes les fonctions et procédures se rapportant à une date.
 
