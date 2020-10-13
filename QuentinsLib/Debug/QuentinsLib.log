@@ -1,0 +1,7 @@
+﻿  pch.cpp
+  dllmain.cpp
+  QuentinsLib.cpp
+C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'Date' quand aucune variable n'est déclarée
+C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.h(49,33): warning C4091: 'typedef ' : ignoré à gauche de 'Date' quand aucune variable n'est déclarée
+  Génération de code en cours...
+  QuentinsLib.vcxproj -> C:\Users\Quentin\source\repos\QuentinsLib\Debug\QuentinsLib.dll

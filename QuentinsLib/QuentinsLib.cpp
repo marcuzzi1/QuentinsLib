@@ -34,6 +34,7 @@ unsigned int PGCD(unsigned int a, unsigned int b) {
 * #                                                                       #
 * #########################################################################
 */
+// Veuillez utiliser la structure de données Date pour pouvoir faire appel à cette fonction
 bool ValidDate(int jj, int mm, int aaaa) { // À REFAIRE !
 	if (mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12) {
 		if (jj > 31) {
@@ -89,7 +90,6 @@ Date DateSuivante(Date date) {
 	int jour = suivante.day;
 	int mois = suivante.month;
 	int annee = suivante.year;
-	if (mois == 1 || mois == 3)
 	return suivante;
 }
 
