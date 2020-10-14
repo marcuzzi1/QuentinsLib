@@ -86,10 +86,67 @@ bool EstBissextile(int annee) {
 	return false;
 }
 
+/*
+* ###############################################################################
+* #                                                                             #
+* # Fonction retournant une Date contenant le jour suivant de la Date en entrée #
+* # Entrée : une Date (auparavant contrôlée !)                                  #
+* # Sortie : La date suivante                                                   #
+* #                                                                             #
+* ###############################################################################
+*/
 Date DateSuivante(Date date) {
 	Date suivante = date;
+	if (date.month == 1 || date.month == 3 || date.month == 5 || date.month == 7 || date.month == 8 || date.month == 10 || date.month == 12) {
+		if (date.day < 31) {
+			suivante.day++;
+		}
+		else {
+			date.day = 1;
+			if (date.month == 12) {
+				suivante.month = 1;
+				suivante.year++;
+			}
+			else {
+				suivante.month++;
+			}
+		}
+	}
+	else {
+		if (date.month != 2) {
+			if (date.day < 30) {
+				suivante.day++;
+			}
+			else {
+				suivante.day++;
+				suivante.month++;
+			}
+		}
+		else {
+			if (EstBissextile(date.year)) {
+				if (date.day < 29) {
+					suivante.day++;
+				}
+				else {
+					suivante.day = 1;
+					suivante.month++;
+				}
+			}
+			else {
+				if (date.day < 28) {
+					suivante.day++;
+				}
+				else {
+					suivante.day = 1;
+					suivante.month++;
+				}
+			}
+		}
+	}
 	return suivante;
 }
+
+
 
 /*
 * ##############################################################################
@@ -103,48 +160,15 @@ Date DateSuivante(Date date) {
 * #                                                                            #
 * ##############################################################################
 */
-void SaisirEntier(bool signe, bool nul, string message, int& nbr) { // À REFAIRE !
-	if (signe) {
-		if (nul) {
-			cout << message;
-			cin >> nbr;
+void SaisirEntier(int borne_inf, int borne_sup, string message, int& nbr) { // À REFAIRE !
+	do {
+		cout << message << " (compris entre " << borne_inf << " et " << borne_sup << " ) ";
+		cin >> nbr;
+		if (cin.fail()) {
+			cin.clear();
+			cout << "Mauvaise saisie ! " << endl;
 		}
-		else {
-			do {
-				cout << message;
-				cin >> nbr;
-				if (nbr == 0) {
-					cout << "Les valeurs nulles ne sont pas acceptees ! " << endl;
-					system("pause");
-					system("cls");
-				}
-			} while (nbr == 0);
-		}
-	}
-	else {
-		if (nul) {
-			do {
-				cout << message;
-				cin >> nbr;
-				if (nbr < 0) {
-					cout << "Les valeurs negatives ne sont pas acceptees ! " << endl;
-					system("pause");
-					system("cls");
-				}
-			} while (nbr < 0);
-		}
-		else {
-			do {
-				cout << message;
-				cin >> nbr;
-				if (nbr <= 0) {
-					cout << "Les valeurs negatives ou nulles ne sont pas acceptees ! " << endl;
-					system("pause");
-					system("cls");
-				}
-			} while (nbr <= 0);
-		}
-	}
+	} while (nbr < borne_inf || nbr > borne_sup);
 }
 
 /*

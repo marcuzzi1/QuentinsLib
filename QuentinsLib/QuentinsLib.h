@@ -3,7 +3,7 @@
 * d'introduction à l'algorithmique.
 * 
 * Auteur : Quentin Marcuzzi
-* Version : 1.0.0
+* Version : 1.0.1
 * Date de création : 01/10/2020
 * 
 */
@@ -39,7 +39,7 @@ extern "C++" bool EstBissextile(int aaaa);
 
 extern "C++" Date DateSuivante(Date date);
 
-extern "C++" void SaisirEntier(bool signe, bool nul, string message, int& nbr);
+extern "C++" void SaisirEntier(int borne_inf, int borne_sup, string message, int& nbr);
 
 extern "C++" void SaisirReel(bool signe, bool nul, string message, float& nbr);
 

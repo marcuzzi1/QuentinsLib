@@ -10,6 +10,8 @@
 3. [Manipulation de dates](#dates)
 	1. [Structure Date](#date_struct)
 	2. [ValidDate](#valid_date)
+	3. [EstBissextile](#bissext)
+	4. [DateSuivante](#date_suiv)
 
 ## Utiliser la librairie QuentinsLib.lib <a name="use_library"></a>
 
@@ -197,3 +199,146 @@ bool ValidDate(Date date) {
 > Exemple de résultat : 
 
 ![Recordit GIF](http://recordit.co/9kNhJrbO1L.gif)
+
+### bool EstBissextile(int annee) <a name="bissext"></a>
+
+> Cette fonction permet de savoir si une année est bissextile ou non, ce qui est utile lors de la vérification ou modification d'une date
+
+```text
+###################################################################
+#                                                                 #
+# Fonction retournant un booléen à vrai si l'année est bissextile #
+# et faux si l'année ne l'est pas                                 #
+# Entrée : Un entier contenant l'année                            #
+# Sortie : Un booléen                                             #
+#                                                                 #
+###################################################################
+
+Fonction EstBissextile(annee : entier) retourne booléen
+Début
+	Si ((annee mod 4 = 0 et annee mod 100 != 0) ou annee mod 400 = 0) alors :
+		Retourne vrai
+	Sinon :
+		Retourne faux
+	Fin si
+Fin EstBissextile
+```
+
+```c++
+bool EstBissextile(int annee) {
+	if ((annee % 4 == 0 && annee % 100 != 0) || annee % 400 == 0) {
+		return true;
+	}
+	return false;
+}
+```
+
+> Il n'y aura pas d'exemple ici
+
+### Date DateSuivante(Date date) <a name="date_suiv"></a>
+
+> Cette fontion retourne la date suivante de celle passée en paramètre
+
+```text
+###############################################################################
+#                                                                             #
+# Fonction retournant une Date contenant le jour suivant de la Date en entrée #
+# Entrée : une Date (auparavant contrôlée !)                                  #
+# Sortie : La date suivante                                                   #
+#                                                                             #
+###############################################################################
+
+Fonction DateSuivante (Date date;) retourne Date
+Début
+	Avec suivante : Date
+	suivante <- date
+	Si (date.month = 1 ou date.month = 3 ou date.month = 5 ou date.month = 7 ou date.month = 8 ou date.month = 10 ou date.month = 12) alors :
+		Si (date.day < 31) alors :
+			suivante.day <- suivante.day + 1
+		Sinon :
+			date.day <- date.day + 1
+			Si (date.month = 12) alors :
+				suivante.month <- 1
+				suivante.year <- suivante.year + 1
+			Sinon :
+				suivante.month <- suivante.month + 1
+			Fin Si
+		Fin Si
+	Sinon :
+		Si (date.month != 2) alors :
+			Si (date.date < 30) alors :
+				suivante.day <- suivante.day + 1
+			Sinon :
+				suivante.day <- 1
+				suivante.month <- suivante.month + 1
+			Fin Si
+		Sinon :
+			Si (EstBissextile(date.year)) alors :
+				Si (date.day < 29) alors :
+					suivante.day <- suivante.day + 1
+				Sinon :
+					suivante.day <- 1
+					suivante.month <- suivante.month + 1
+				Fin Si
+			Sinon :
+				Si (date.day < 28) alors :
+					suivante.day <- suivante.day + 1
+				Sinon :
+					suivante.day <- 1
+					suivante.month <- suivante.month + 1
+				Fin Si
+			Fin Si
+		Fin Si
+	Fin Si
+	Retourne suivante
+Fin DateSuivante
+```
+
+```c++
+void SaisirEntier(bool signe, bool nul, string message, int& nbr) { // À REFAIRE !
+	if (signe) {
+		if (nul) {
+			cout << message;
+			cin >> nbr;
+		}
+		else {
+			do {
+				cout << message;
+				cin >> nbr;
+				if (nbr == 0) {
+					cout << "Les valeurs nulles ne sont pas acceptees ! " << endl;
+					system("pause");
+					system("cls");
+				}
+			} while (nbr == 0);
+		}
+	}
+	else {
+		if (nul) {
+			do {
+				cout << message;
+				cin >> nbr;
+				if (nbr < 0) {
+					cout << "Les valeurs negatives ne sont pas acceptees ! " << endl;
+					system("pause");
+					system("cls");
+				}
+			} while (nbr < 0);
+		}
+		else {
+			do {
+				cout << message;
+				cin >> nbr;
+				if (nbr <= 0) {
+					cout << "Les valeurs negatives ou nulles ne sont pas acceptees ! " << endl;
+					system("pause");
+					system("cls");
+				}
+			} while (nbr <= 0);
+		}
+	}
+}
+```
+
+> Exemple de résultat :
+
