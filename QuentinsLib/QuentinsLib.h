@@ -22,7 +22,7 @@
 
 #include<iostream>
 using namespace std;
-#include<limits>
+#include<climits>
 
 // Définition d'une structure Date :
 typedef struct Date {
