@@ -102,7 +102,7 @@ Date DateSuivante(Date date) {
 			suivante.day++;
 		}
 		else {
-			date.day = 1;
+			suivante.day = 1;
 			if (date.month == 12) {
 				suivante.month = 1;
 				suivante.year++;
@@ -118,7 +118,7 @@ Date DateSuivante(Date date) {
 				suivante.day++;
 			}
 			else {
-				suivante.day++;
+				suivante.day = 1;
 				suivante.month++;
 			}
 		}
@@ -146,7 +146,31 @@ Date DateSuivante(Date date) {
 	return suivante;
 }
 
-
+/*
+* ##########################################################
+* #                                                        #
+* # Procédure de saisie de date (véfification automatique) #
+* # Entrée : Rien                                          #
+* # Sortie : Rien                                          #
+* # Entrée/Sortie : La Date à saisir                       #
+* #                                                        #
+* ##########################################################
+*/
+// Veuillez utiliser la structure Date pour que cette procédure fonctionne
+void SaisirDate(Date& date) {
+	bool valid = false;
+	do {
+		SaisirEntier(0, 31, "Saisir le jour : ", date.day);
+		SaisirEntier(0, 12, "Saisir le mois : ", date.month);
+		SaisirEntier(0, 65535, "Saisir l'annee : ", date.year);
+		if (!ValidDate(date)) {
+			cout << "La date saisie est invalide, reessayez svp !" << endl;
+		}
+		else {
+			valid = !valid;
+		}
+	} while (!valid);
+}
 
 /*
 * ##############################################################################
@@ -161,17 +185,17 @@ Date DateSuivante(Date date) {
 * ##############################################################################
 */
 void SaisirEntier(int borne_inf, int borne_sup, string message, int& nbr) {
-	// Tant qu'on n'entre pas un entier
 	cout << message;
 	bool valid = false;
 	do {
 		cin >> nbr;
-		if (cin.fail() || (nbr < borne_inf && nbr > borne_sup)) {
+		if (cin.fail() || nbr < borne_inf || nbr > borne_sup) {
 			cin.clear();
+			cin.ignore();
 			cout << "Saisie invalide, reessayez : ";
 		}
 		else if (nbr >= borne_inf && nbr <= borne_sup) {
-			valid != valid;
+			valid = !valid;
 		}
 	} while (!valid);
 }
@@ -188,48 +212,20 @@ void SaisirEntier(int borne_inf, int borne_sup, string message, int& nbr) {
 * #                                                                            #
 * ##############################################################################
 */
-void SaisirReel(bool signe, bool nul, string message, float& nbr) { // À REFAIRE !
-	if (signe) {
-		if (nul) {
-			cout << message;
-			cin >> nbr;
+void SaisirReel(float borne_inf, float borne_sup, string message, float& nbr) { // À REFAIRE !
+	cout << message;
+	bool valid = false;
+	do {
+		cin >> nbr;
+		if (cin.fail() || nbr < borne_inf || nbr > borne_sup) {
+			cin.clear();
+			cin.ignore();
+			cout << "Saisie invalide, reessayez : ";
 		}
-		else {
-			do {
-				cout << message;
-				cin >> nbr;
-				if (nbr == 0) {
-					cout << "Les valeurs nulles ne sont pas acceptees." << endl;
-					system("pause");
-					system("cls");
-				}
-			} while (nbr == 0);
+		else if (nbr >= borne_inf && nbr <= borne_sup) {
+			valid = !valid;
 		}
-	}
-	else {
-		if (nul) {
-			do {
-				cout << message;
-				cin >> nbr;
-				if (nbr < 0) {
-					cout << "Les valeurs negatives ne sont pas acceptees." << endl;
-					system("pause");
-					system("cls");
-				}
-			} while (nbr < 0);
-		}
-		else {
-			do {
-				cout << message;
-				cin >> nbr;
-				if (nbr <= 0) {
-					cout << "Les valeurs negatives ou nulles ne sont pas acceptees." << endl;
-					system("pause");
-					system("cls");
-				}
-			} while (nbr <= 0);
-		}
-	}
+	} while (!valid);
 }
 
 /*
@@ -283,7 +279,7 @@ void CalculatriceV1(char operande, float nb1, float nb2) {
 */
 void CalculatriceV2(char operande, float nb1, float nb2) {
 	switch (operande) {
-	case '+' :
+	case '+':
 		cout << nb1 << " + " << nb2 << " = " << nb1 + nb2 << endl;
 		break;
 	case '-':
@@ -306,3 +302,25 @@ void CalculatriceV2(char operande, float nb1, float nb2) {
 	}
 }
 
+/*
+* ##################################################
+* #                                                #
+* # Procédure d'affichage d'une pyramide d'étoiles #
+* # Entrée : Le nombre de lignes (entier)          #
+* # Sortie : Rien                                  #
+* # Entrée/Sortie : Rien                           #
+* #                                                #
+* ##################################################
+*/
+// Attention à la largeur maximale de votre console !
+void AfficherPyramide(int hauteur) {
+	for (int i = 1; i <= hauteur; i++) {
+		for (int j = 1; j <= (hauteur - i); j++) {
+			cout << " ";
+		}
+		for (int j = 1; j <= (hauteur - (hauteur - (i - 1))); j++) {
+			cout << "*";
+		}
+		cout << endl;
+	}
+}

@@ -295,7 +295,7 @@ Fin DateSuivante
 ```
 
 ```c++
-void SaisirEntier(bool signe, bool nul, string message, int& nbr) { // À REFAIRE !
+void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
 	if (signe) {
 		if (nul) {
 			cout << message;
