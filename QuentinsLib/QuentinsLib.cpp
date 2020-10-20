@@ -163,13 +163,17 @@ Date DateSuivante(Date date) {
 void SaisirEntier(int borne_inf, int borne_sup, string message, int& nbr) {
 	// Tant qu'on n'entre pas un entier
 	cout << message;
-	while (!(cin >> nbr)) {
-		cout << "Erreur : le format de saisie est invalide ! Reessayez : ";
-		// On nettoye l'entrée
-		cin.clear();
-		// On ignore la saisie
-		cin.ignore();
-	}
+	bool valid = false;
+	do {
+		cin >> nbr;
+		if (cin.fail() || (nbr < borne_inf && nbr > borne_sup)) {
+			cin.clear();
+			cout << "Saisie invalide, reessayez : ";
+		}
+		else if (nbr >= borne_inf && nbr <= borne_sup) {
+			valid != valid;
+		}
+	} while (!valid);
 }
 
 /*

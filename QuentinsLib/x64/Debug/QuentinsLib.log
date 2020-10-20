@@ -1,11 +1,5 @@
 ﻿  QuentinsLib.cpp
 C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.h(32,2): warning C4091: 'typedef ' : ignoré à gauche de 'Date' quand aucune variable n'est déclarée
 C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.h(50,33): warning C4091: 'typedef ' : ignoré à gauche de 'Date' quand aucune variable n'est déclarée
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(170,43): error C2589: '(' : jeton non conforme à droite de '::'
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(170): error C2144: erreur de syntaxe : 'unknown-type' doit être précédé de ')'
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(170): error C2144: erreur de syntaxe : 'unknown-type' doit être précédé de ';'
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(170,43): error C2143: erreur de syntaxe : absence de ')' avant '>'
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(170,43): error C2143: erreur de syntaxe : absence de ';' avant '>'
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(170,43): error C2059: erreur de syntaxe : '>'
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(170,43): error C2059: erreur de syntaxe : ')'
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(170,125): error C2059: erreur de syntaxe : ')'
+C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(174,10): warning C4552: '!=' : résultat de l'expression non utilisé
+  QuentinsLib.vcxproj -> C:\Users\Quentin\source\repos\QuentinsLib\x64\Debug\QuentinsLib.lib
