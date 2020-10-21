@@ -7,6 +7,7 @@
 1. [Importer et utiliser la librairie](#use_library)
 2. [Fonctions mathématiques](#maths)
 	1. [PGCD](#pgcd)
+	2. [Factoriel](#fact)
 3. [Manipulation de dates](#dates)
 	1. [Structure Date](#date_struct)
 	2. [ValidDate](#valid_date)
@@ -99,6 +100,41 @@ unsigned int PGCD(unsigned int a, unsigned int b) {
 > Exemple de résultat : 
 
 ![Recordit GIF](http://recordit.co/6WOSjMCtPr.gif)
+
+### unsigned int Factoriel(unsigned int nbr) <a name="fact"></a>
+
+> Cette fonction retourne le factoriel d'un entier non signé passé en paramètre
+
+> Attention ! Par soucis de précision vous ne pourrez afficher qu'au maximum fatoriel 33
+
+```text
+#################################################################
+#                                                               #
+# Fonction retournant le factoriel d'un nombre entier non signé #
+# Entrée : 1 entier non signé                                   #
+# Sortie : Le résultat du factoriel                             #
+#                                                               #
+#################################################################
+
+Fonction Factoriel (nbr : entier non signé ;) retoune entier non signé
+Début
+	Avec fact : entier non signé
+	fact <- 1
+	Pour (i : entier de 1 à nbr pas de 1) faire :
+		fact <- fact * i
+	Fin Faire
+Fin Factoriel
+```
+
+```c++
+unsigned int Factoriel(unsigned int nbr) {
+	unsigned int fact = 1;
+	for (int i = 1; i <= nbr; i++) {
+		fact *= i;
+	}
+	return fact;
+}
+```
 
 ## Manipulations de dates : <a name="dates"></a>
 
