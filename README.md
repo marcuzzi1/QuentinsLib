@@ -1,6 +1,11 @@
 # QuentinsLib
 
-> Cette librairie contient des fonctions et procédures nécessaires à la réalisation de tâches simples mais souvent répétitives
+> Cette librairie contient des fonctions et procédures demandées pour les tp de DUT informatique de première année
+
+> Pour mettre à jour la bibliothèque : 
+> 	1. Vous possédez git sur votre machine Windows --> Exécutez `pull.bat`
+>	2. Vous êtes sous Linux --> Exécutez `git pull` dans un terminal en se plaçant dans le répertoire où cous avez téléchargé la librairie
+>	3. Vous n'avez pas git --> Retéléchargez la librairie depuis cette page et pensez à vos éditions de liens si vous le téléchargez ailleurs
 
 # Table des matières
 
