@@ -3,6 +3,8 @@
 #include "pch.h"
 #include "QuentinsLib.h"
 
+// ============================================= FONCTIONS MATHEMATIQUES =============================================
+
 /*
 * #######################################################
 * #                                                     #
@@ -24,6 +26,100 @@ unsigned int PGCD(unsigned int a, unsigned int b) {
 	}
 	return a;
 }
+
+/*
+* #######################################################################################
+* #                                                                                     #
+* # Procédure contenant les instruction de la calculatrice (version si sinon imbriqués) #
+* # Entrée : opérande sour la forme d'un caractère                                      #
+* #          2 nombres réels                                                            #
+* # Sortie : Rien                                                                       #
+* #                                                                                     #
+* #######################################################################################
+*/
+void CalculatriceV1(char operande, float nb1, float nb2) {
+	if (operande == '+') {
+		cout << nb1 << " + " << nb2 << " = " << nb1 + nb2 << endl;
+	}
+	else {
+		if (operande == '-') {
+			cout << nb1 << " - " << nb2 << " = " << nb1 - nb2 << endl;
+		}
+		else {
+			if (operande == '*') {
+				cout << nb1 << " * " << nb2 << " = " << nb1 * nb2 << endl;
+			}
+			else {
+				if (operande == '/') {
+					if (nb2 != 0) {
+						cout << nb1 << " / " << nb2 << " = " << nb1 / nb2 << endl;
+					}
+					else {
+						cout << "Pas de division par 0 ! " << endl;
+					}
+				}
+				else {
+					cout << "Operande inconnue ! " << endl;
+				}
+			}
+		}
+	}
+}
+
+/*
+* ##########################################################################
+* #                                                                        #
+* # Procédure contenant les instruction de la calculatrice (version selon) #
+* # Entrée : opérande sour la forme d'un caractère                         #
+* #	         2 nombres réels                                               #
+* # Sortie : Rien                                                          #
+* #                                                                        #
+* ##########################################################################
+*/
+void CalculatriceV2(char operande, float nb1, float nb2) {
+	switch (operande) {
+	case '+':
+		cout << nb1 << " + " << nb2 << " = " << nb1 + nb2 << endl;
+		break;
+	case '-':
+		cout << nb1 << " - " << nb2 << " = " << nb1 - nb2 << endl;
+		break;
+	case '*':
+		cout << nb1 << " * " << nb2 << " = " << nb1 * nb2 << endl;
+		break;
+	case '/':
+		if (nb2 != 0) {
+			cout << nb1 << " / " << nb2 << " = " << nb1 / nb2 << endl;
+		}
+		else {
+			cout << "Pas de division par 0 !" << endl;
+		}
+		break;
+	default:
+		cout << "Operande inconnue !" << endl;
+		break;
+	}
+}
+
+/*
+* #################################################################
+* #                                                               #
+* # Fonction retournant le factoriel d'un nombre entier non signé #
+* # Entrée : 1 entier non signé                                   #
+* # Sortie : Le résultat du factoriel                             #
+* #                                                               #
+* #################################################################
+*/
+
+unsigned int Factoriel(unsigned int nbr) {
+	unsigned int fact = 1;
+	for (int i = 1; i <= nbr; i++) {
+		fact *= i;
+	}
+	return fact;
+}
+
+// ============================================= MANIPULATION DE DATES =============================================
 
 /*
 * #########################################################################
@@ -172,6 +268,8 @@ void SaisirDate(Date& date) {
 	} while (!valid);
 }
 
+// ============================================= MANIPULAITONS DE VARIABLES =============================================
+
 /*
 * ##############################################################################
 * #                                                                            #
@@ -228,79 +326,7 @@ void SaisirReel(float borne_inf, float borne_sup, string message, float& nbr) { 
 	} while (!valid);
 }
 
-/*
-* #######################################################################################
-* #                                                                                     #
-* # Procédure contenant les instruction de la calculatrice (version si sinon imbriqués) #
-* # Entrée : opérande sour la forme d'un caractère                                      #
-* #          2 nombres réels                                                            #
-* # Sortie : Rien                                                                       #
-* #                                                                                     #
-* #######################################################################################
-*/
-void CalculatriceV1(char operande, float nb1, float nb2) {
-	if (operande == '+') {
-		cout << nb1 << " + " << nb2 << " = " << nb1 + nb2 << endl;
-	}
-	else {
-		if (operande == '-') {
-			cout << nb1 << " - " << nb2 << " = " << nb1 - nb2 << endl;
-		}
-		else {
-			if (operande == '*') {
-				cout << nb1 << " * " << nb2 << " = " << nb1 * nb2 << endl;
-			}
-			else {
-				if (operande == '/') {
-					if (nb2 != 0) {
-						cout << nb1 << " / " << nb2 << " = " << nb1 / nb2 << endl;
-					}
-					else {
-						cout << "Pas de division par 0 ! " << endl;
-					}
-				}
-				else {
-					cout << "Operande inconnue ! " << endl;
-				}
-			}
-		}
-	}
-}
-
-/*
-* ##########################################################################
-* #                                                                        #
-* # Procédure contenant les instruction de la calculatrice (version selon) #
-* # Entrée : opérande sour la forme d'un caractère                         #
-* #	         2 nombres réels                                               #
-* # Sortie : Rien                                                          #
-* #                                                                        #
-* ##########################################################################
-*/
-void CalculatriceV2(char operande, float nb1, float nb2) {
-	switch (operande) {
-	case '+':
-		cout << nb1 << " + " << nb2 << " = " << nb1 + nb2 << endl;
-		break;
-	case '-':
-		cout << nb1 << " - " << nb2 << " = " << nb1 - nb2 << endl;
-		break;
-	case '*':
-		cout << nb1 << " * " << nb2 << " = " << nb1 * nb2 << endl;
-		break;
-	case '/':
-		if (nb2 != 0) {
-			cout << nb1 << " / " << nb2 << " = " << nb1 / nb2 << endl;
-		}
-		else {
-			cout << "Pas de division par 0 !" << endl;
-		}
-		break;
-	default:
-		cout << "Operande inconnue !" << endl;
-		break;
-	}
-}
+// ============================================= SPECIFIQUES AUX TP =============================================
 
 /*
 * ##################################################

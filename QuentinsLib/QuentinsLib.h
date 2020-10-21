@@ -48,6 +48,6 @@ extern "C++" void CalculatriceV1(char operande, float nb1, float nb2);
 
 extern "C++" void CalculatriceV2(char operande, float nb1, float nb2);
 
-extern "C++" typedef struct Date;
-
 extern "C++" void AfficherPyramide(int hauteur);
+
+extern "C++" unsigned int Factoriel(unsigned int nbr);

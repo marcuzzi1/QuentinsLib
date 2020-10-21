@@ -6,12 +6,15 @@
 
 1. [Importer et utiliser la librairie](#use_library)
 2. [Fonctions mathématiques](#maths)
-	1. [unsigned int PGCD(unsigned int a, unsigned int b)](#pgcd)
+	1. [PGCD](#pgcd)
 3. [Manipulation de dates](#dates)
 	1. [Structure Date](#date_struct)
 	2. [ValidDate](#valid_date)
 	3. [EstBissextile](#bissext)
 	4. [DateSuivante](#date_suiv)
+4. [Fonctions et procédures spécifiques aux tp](#specific)
+	1. [CalculatriceV1](#calcv1)
+	2. [CalculatriceV2](#calcv2)
 
 ## Utiliser la librairie QuentinsLib.lib <a name="use_library"></a>
 
@@ -343,3 +346,138 @@ void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
 > Exemple de résultat :
 
 ![Recordit GIF](http://recordit.co/S4La67D2aX.gif)
+
+## Fonctions et procédures spécifiques aux tp <a name="specific"></a>
+
+### void CalculatriceV1(char operande, float nb1, float nb2) <a name="calcv1"></a>
+
+> Cette procédure simule une calculatrice simple avec des `Si Sinon` imbriqués
+
+```text
+#######################################################################################
+#                                                                                     #
+# Procédure contenant les instruction de la calculatrice (version si sinon imbriqués) #
+# Entrée : opérande sour la forme d'un caractère                                      #
+#          2 nombres réels                                                            #
+# Sortie : Rien                                                                       #
+#                                                                                     #
+#######################################################################################
+
+Procédure CalculatriceV1(operande : caractère, nb1 : réel, nb2 : réel ;)
+Début
+	Si (operande = '+') alors :
+		Afficher nb1, operande, nb2, " = ", nb1 + nb2
+	Sinon :
+		Si (operande = '-') alors :
+			Afficher nb1, operande, nb2, " = ", nb1 - nb2
+		Sinon :
+			Si (operande = '*') alors :
+				Afficher nb1, operande, nb2, " = ", nb1 * nb2
+			Sinon :
+				Si (operande = '/') alors :
+					Si (nb2 != 0) alors :
+						Afficher nb1, operande, nb2, " = ", nb1 / nb2
+					Sinon :
+						Afficher "Pas de division par 0 !"
+					Fin Si
+				Sinon :
+					Afficher "Operande inconnue !"
+				Fin Si
+			Fin Si
+		Fin Si
+	Fin Si
+Fin CalculatriceV1
+```
+
+```c++
+void CalculatriceV1(char operande, float nb1, float nb2) {
+	if (operande == '+') {
+		cout << nb1 << " + " << nb2 << " = " << nb1 + nb2 << endl;
+	}
+	else {
+		if (operande == '-') {
+			cout << nb1 << " - " << nb2 << " = " << nb1 - nb2 << endl;
+		}
+		else {
+			if (operande == '*') {
+				cout << nb1 << " * " << nb2 << " = " << nb1 * nb2 << endl;
+			}
+			else {
+				if (operande == '/') {
+					if (nb2 != 0) {
+						cout << nb1 << " / " << nb2 << " = " << nb1 / nb2 << endl;
+					}
+					else {
+						cout << "Pas de division par 0 ! " << endl;
+					}
+				}
+				else {
+					cout << "Operande inconnue ! " << endl;
+				}
+			}
+		}
+	}
+}
+```
+
+### void CalculatriceV2(char operande, float nb1, float nb2) <a name="calcv2"></a>
+
+> Cette procédure simule une calculatrice avec une stucture conditionnelle `sinon`
+
+```text
+##########################################################################
+#                                                                        #
+# Procédure contenant les instruction de la calculatrice (version selon) #
+# Entrée : opérande sour la forme d'un caractère                         #
+#          2 nombres réels                                               #
+# Sortie : Rien                                                          #
+#                                                                        #
+##########################################################################
+
+Procédure CalculatriceV2(operande : caractère, nb1 : réel, nb2 : réel ;)
+Début
+	Selon (operande) faire :
+	cas '+' :
+		Afficher nb1, operande, nb2, " = ", nb1 + nb2
+	cas '-' :
+		Afficher nb1, operande, nb2, " = ", nb1 - nb2
+	cas '*' :
+		Afficher nb1, operande, nb2, " = ", nb1 * nb2
+	cas '/' :
+		Si (nb2 != 0) alors :
+			Afficher nb1, operande, nb2, " = ", nb1 / nb2
+		Sinon :
+			Afficher "Pas de division par 0 !"
+		Fin Si
+	Défaut :
+		Afficher "Opérande inconnue !"
+	Fin Faire
+Fin CalculatriceV2
+```
+
+```c++
+void CalculatriceV2(char operande, float nb1, float nb2) {
+	switch (operande) {
+	case '+':
+		cout << nb1 << " + " << nb2 << " = " << nb1 + nb2 << endl;
+		break;
+	case '-':
+		cout << nb1 << " - " << nb2 << " = " << nb1 - nb2 << endl;
+		break;
+	case '*':
+		cout << nb1 << " * " << nb2 << " = " << nb1 * nb2 << endl;
+		break;
+	case '/':
+		if (nb2 != 0) {
+			cout << nb1 << " / " << nb2 << " = " << nb1 / nb2 << endl;
+		}
+		else {
+			cout << "Pas de division par 0 !" << endl;
+		}
+		break;
+	default:
+		cout << "Operande inconnue !" << endl;
+		break;
+	}
+}
+```
