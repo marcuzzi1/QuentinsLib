@@ -388,6 +388,55 @@ void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
 
 ![Recordit GIF](http://recordit.co/S4La67D2aX.gif)
 
+### void SaisirDate(Date& date) <a name="saisir_date"></a>
+
+> Cette procédure permet de saisir et de contrôler une date (attention à utiliser la structure Date)
+
+```text
+##########################################################
+#                                                        #
+# Procédure de saisie de date (véfification automatique) #
+# Entrée : Rien                                          #
+# Sortie : Rien                                          #
+# Entrée/Sortie : La Date à saisir                       #
+#                                                        #
+##########################################################
+
+Procédure SaisirDate(; date : Date)
+Début
+	Avec valid : booléen
+	valid <- faux
+	Répéter :
+		SaisirEntier(0, 31, "Saisir le jour : ", date.day);
+		SaisirEntier(0, 12, "Saisir le mois : ", date.month);
+		SaisirEntier(0, 65535, "Saisir l'annee : ", date.year);
+		Si (!ValidDate(date)) alors :
+			Afficher "La date saisie est invalide, reessayez svp !"
+			À la ligne
+		Sinon :
+			valid <- vrai
+		Fin Si
+	Tant que (!valid)
+Fin SaisirDate
+```
+
+```c++
+void SaisirDate(Date& date) {
+	bool valid = false;
+	do {
+		SaisirEntier(0, 31, "Saisir le jour : ", date.day);
+		SaisirEntier(0, 12, "Saisir le mois : ", date.month);
+		SaisirEntier(0, 65535, "Saisir l'annee : ", date.year);
+		if (!ValidDate(date)) {
+			cout << "La date saisie est invalide, reessayez svp !" << endl;
+		}
+		else {
+			valid = !valid;
+		}
+	} while (!valid);
+}
+```
+
 ## Fonctions et procédures spécifiques aux tp <a name="specific"></a>
 
 ### void CalculatriceV1(char operande, float nb1, float nb2) <a name="calcv1"></a>
