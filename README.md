@@ -18,6 +18,7 @@
 	2. [ValidDate](#valid_date)
 	3. [EstBissextile](#bissext)
 	4. [DateSuivante](#date_suiv)
+	5. [SaisirDate](#saisir_date)
 4. [Fonctions et procédures spécifiques aux tp](#specific)
 	1. [CalculatriceV1](#calcv1)
 	2. [CalculatriceV2](#calcv2)
