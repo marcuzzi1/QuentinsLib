@@ -311,6 +311,16 @@ void CalculatriceV2(char operande, float nb1, float nb2) {
 * # Entrée/Sortie : Rien                           #
 * #                                                #
 * ##################################################
+* 
+* Le nombre d'étoiles à afficher par ligne est déduit par la relation suivante :
+* Soit i le numéro de l'étape de la première boucle POUR
+* Soit hauteur la hauteur de pyramide saisie
+* nombre d'étoiles = 1 + 2 (hauteur - (hauteur - (i - 1))
+*                  = 1 + 2 (hauteur - (hauteur - i + 1))
+*                  = 1 + 2 (hauteur - hauteur + i - 1)
+*                  = 1 + 2 (i - 1)
+*                  = 1 + 2i - 2
+*                  = -1 + 2i
 */
 // Attention à la largeur maximale de votre console !
 void AfficherPyramide(int hauteur) {
@@ -318,7 +328,7 @@ void AfficherPyramide(int hauteur) {
 		for (int j = 1; j <= (hauteur - i); j++) {
 			cout << " ";
 		}
-		for (int j = 1; j <= (hauteur - (hauteur - (i - 1))); j++) {
+		for (int j = 1; j <= (-1 + 2 * i); j++) {
 			cout << "*";
 		}
 		cout << endl;
