@@ -119,7 +119,7 @@ typedef struct Date {
 
 > Cette fonction retourne un booléen et permet donc d'en déterminer si une date saisir par l'utilisateur est valide ou non
 
-> Elle est *dépendante* de la fonction <a href="bissext">`EstBissextile(int annee)`</a>
+> Elle est *dépendante* de la fonction <a href="#bissext">`EstBissextile(int annee)`</a>
 
 ```text
 #########################################################################
@@ -342,3 +342,4 @@ void SaisirEntier(bool signe, bool nul, string message, int& nbr) {
 
 > Exemple de résultat :
 
+![Recordit GIF](http://recordit.co/S4La67D2aX.gif)
