@@ -110,13 +110,44 @@ void CalculatriceV2(char operande, float nb1, float nb2) {
 * #                                                               #
 * #################################################################
 */
-
 unsigned int Factoriel(unsigned int nbr) {
 	unsigned int fact = 1;
 	for (int i = 1; i <= nbr; i++) {
 		fact *= i;
 	}
 	return fact;
+}
+
+/*
+* ###########################################################################################
+* #                                                                                         #
+* # Fonction retournant un booléen à vrai si le nombre en paramètre est parfait, faux sinon #
+* # Entrée : Un nombre entier                                                               #
+* # Sortie : un booléen                                                                     #
+* #                                                                                         #
+* ###########################################################################################
+*/
+bool EstParfait(int nombre) {
+	return (nombre == SommeDiviseurs(nombre));
+}
+
+/*
+* #######################################################################################################
+* #                                                                                                     #
+* # Fonction retournant la somme de tous les diviseurs d'un nombre passé en paramètre (lui-même) exclus #
+* # Entrée : un nombre entier                                                                           #
+* # Sortie : la somme de ses diviseurs (entier)                                                         #
+* #                                                                                                     #
+* #######################################################################################################
+*/
+int SommeDiviseurs(int nombre) {
+	int somme = 0;
+	for (int i = 1; i < nombre; i++) {
+		if (nombre % i == 0) {
+			somme += i;
+		}
+	}
+	return somme;
 }
 
 // ============================================= MANIPULATION DE DATES =============================================
@@ -359,4 +390,31 @@ void AfficherPyramide(int hauteur) {
 		}
 		cout << endl;
 	}
+}
+
+// ============================================= Classes d'objets : =============================================
+
+// Menu :
+/*
+* Cette classe sert à créer, afficher et effectuer des choix en allégeant le programme principal de l'affichage répétitif.
+* Pour l'instancier vous devez lui passer en paramètre un vector (tableau à dimension variable) contenant la liste des choix possibles.
+* Le traitement en fonction de ces choix est à faire dans votre programme principal.
+* Veillez à bien numéroter vos choix lors de la déclaration.
+*/
+Menu::Menu(vector<string> choix) {
+	this->choix = choix;
+}
+
+void Menu::Afficher() {
+	locale::global(locale{ "" });
+	cout << "Menu :" << endl;
+	for (string choice : this->choix) {
+		cout << choice << endl;
+	}
+}
+
+int Menu::EffectuerChoix() {
+	int choice;
+	SaisirEntier(1, this->choix.size(), "Votre choix : ", choice);
+	return choice;
 }

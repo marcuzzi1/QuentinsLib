@@ -3,9 +3,8 @@
 * d'introduction à l'algorithmique.
 * 
 * Auteur : Quentin Marcuzzi
-* Version : 1.0.1
+* Version : 2.0.0
 * Date de création : 01/10/2020
-* 
 */
 
 // Le bloc ifdef suivant est la façon standard de créer des macros qui facilitent l'exportation
@@ -22,6 +21,7 @@
 
 #include<iostream>
 using namespace std;
+#include<vector>
 
 // Définition d'une structure Date :
 typedef struct Date {
@@ -51,3 +51,24 @@ extern "C++" void CalculatriceV2(char operande, float nb1, float nb2);
 extern "C++" void AfficherPyramide(int hauteur);
 
 extern "C++" unsigned int Factoriel(unsigned int nbr);
+
+extern "C++" bool EstParfait(int nombre);
+
+extern "C++" int SommeDiviseurs(int nombre);
+
+// Classe d'objets
+
+// Menu :
+class Menu {
+	// Attributs :
+private :
+	vector<string> choix;
+
+	// Méthodes :
+public :
+	// Constructeur
+	Menu(vector<string> choix);
+	// Autre
+	void Afficher();
+	int EffectuerChoix();
+};
