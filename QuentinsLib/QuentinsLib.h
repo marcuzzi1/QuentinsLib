@@ -42,6 +42,8 @@ extern "C++" void SaisirDate(Date & date);
 
 extern "C++" void SaisirEntier(int borne_inf, int borne_sup, string message, int& nbr);
 
+extern "C++" void SaisirEntier(string message, int& nbr);
+
 extern "C++" void SaisirReel(float borne_inf, float borne_sup, string message, float& nbr);
 
 extern "C++" void CalculatriceV1(char operande, float nb1, float nb2);

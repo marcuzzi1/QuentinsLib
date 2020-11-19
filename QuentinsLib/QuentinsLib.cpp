@@ -330,6 +330,32 @@ void SaisirEntier(int borne_inf, int borne_sup, string message, int& nbr) {
 }
 
 /*
+* #############################################
+* #                                           #
+* # Procédure de saisie d'un entier non borné #
+* # Entrée : un message à afficher            #
+* # Sortie : rien                             #
+* # Entrée/Sortie : le nombre entier à saisir #
+* #                                           #
+* #############################################
+*/
+void SaisirEntier(string message, int& nbr) {
+	cout << message;
+	bool valid = false;
+	do {
+		cin >> nbr;
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore();
+			cout << "Saisie invalide, reessayez : ";
+		}
+		else {
+			valid = !valid;
+		}
+	} while (!valid);
+}
+
+/*
 * ##############################################################################
 * #                                                                            #
 * # Procédure de saisie et de vérification d'un réel                           #
@@ -399,7 +425,8 @@ void AfficherPyramide(int hauteur) {
 * Cette classe sert à créer, afficher et effectuer des choix en allégeant le programme principal de l'affichage répétitif.
 * Pour l'instancier vous devez lui passer en paramètre un vector (tableau à dimension variable) contenant la liste des choix possibles.
 * Le traitement en fonction de ces choix est à faire dans votre programme principal.
-* Veillez à bien numéroter vos choix lors de la déclaration.
+* La numérotation est automatique.
+* Pour effectuer un choix le menu utilise et retourne un entier.
 */
 Menu::Menu(vector<string> choix) {
 	this->choix = choix;
@@ -408,8 +435,10 @@ Menu::Menu(vector<string> choix) {
 void Menu::Afficher() {
 	locale::global(locale{ "" });
 	cout << "Menu :" << endl;
+	int num = 1;
 	for (string choice : this->choix) {
-		cout << choice << endl;
+		cout << num << ". " << choice << endl;
+		num++;
 	}
 }
 

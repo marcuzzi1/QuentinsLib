@@ -1,5 +1,5 @@
 ﻿  QuentinsLib.cpp
 C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'Date' quand aucune variable n'est déclarée
 C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(115,20): warning C4018: '<=' : incompatibilité signed/unsigned
-C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(418,62): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\Quentin\source\repos\QuentinsLib\QuentinsLib\QuentinsLib.cpp(447,62): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
   QuentinsLib.vcxproj -> C:\Users\Quentin\source\repos\QuentinsLib\x64\Debug\QuentinsLib.lib
