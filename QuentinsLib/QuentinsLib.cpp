@@ -367,7 +367,7 @@ void SaisirEntier(string message, int& nbr) {
 * #                                                                            #
 * ##############################################################################
 */
-void SaisirReel(float borne_inf, float borne_sup, string message, float& nbr) { // À REFAIRE !
+void SaisirReel(float borne_inf, float borne_sup, string message, float& nbr) {
 	cout << message;
 	bool valid = false;
 	do {
