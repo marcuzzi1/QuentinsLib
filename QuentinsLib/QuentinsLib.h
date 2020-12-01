@@ -46,6 +46,8 @@ extern "C++" void SaisirEntier(string message, int& nbr);
 
 extern "C++" void SaisirReel(float borne_inf, float borne_sup, string message, float& nbr);
 
+extern "C++" bool nombreVoyelles(string mot);
+
 extern "C++" void CalculatriceV1(char operande, float nb1, float nb2);
 
 extern "C++" void CalculatriceV2(char operande, float nb1, float nb2);

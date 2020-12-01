@@ -383,6 +383,10 @@ void SaisirReel(float borne_inf, float borne_sup, string message, float& nbr) {
 	} while (!valid);
 }
 
+bool nombreVoyelles(string mot) {
+
+}
+
 // ============================================= SPECIFIQUES AUX TP =============================================
 
 /*
