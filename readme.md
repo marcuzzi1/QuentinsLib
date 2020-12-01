@@ -7,4 +7,4 @@
 > 1 : Télécharchez l'intégralité des fichiers et placez les dans un dossier dont vous devez retenir le chemin
 > *Exemple : C:\Users\votre_username\Downloads\QuentinsLib*
 > 2 : Assurez vous de compiler votre projet **C++** en `x64`
-[!Recordit GIF](http://recordit.co/nf7kFvsFux.gif)
+![Recordit GIF](http://recordit.co/nf7kFvsFux.gif)
