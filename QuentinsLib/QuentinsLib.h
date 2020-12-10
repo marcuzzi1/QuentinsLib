@@ -46,7 +46,9 @@ extern "C++" void SaisirEntier(string message, int& nbr);
 
 extern "C++" void SaisirReel(float borne_inf, float borne_sup, string message, float& nbr);
 
-extern "C++" bool nombreVoyelles(string mot);
+extern "C++" void SaisirChaine(string message, string & chaine);
+
+extern "C++" int nombreVoyelles(string mot);
 
 extern "C++" void CalculatriceV1(char operande, float nb1, float nb2);
 
@@ -59,6 +61,8 @@ extern "C++" unsigned int Factoriel(unsigned int nbr);
 extern "C++" bool EstParfait(int nombre);
 
 extern "C++" int SommeDiviseurs(int nombre);
+
+extern "C++" bool estUnPalindrome(string nom);
 
 // Classe d'objets
 

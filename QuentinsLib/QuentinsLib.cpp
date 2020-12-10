@@ -383,11 +383,68 @@ void SaisirReel(float borne_inf, float borne_sup, string message, float& nbr) {
 	} while (!valid);
 }
 
-bool nombreVoyelles(string mot) {
-
+void SaisirChaine(string message, string& chaine) {
+	cout << message;
+	bool valid = false;
+	do {
+		cin >> chaine;
+		if (cin.fail()) {
+			cout << "Probleme lors de la saisie, reessayez svp : ";
+		}
+		else {
+			valid = !valid;
+		}
+	} while (!valid);
 }
 
-// ============================================= SPECIFIQUES AUX TP =============================================
+int nombreVoyelles(string mot) {
+	int nb = 0;
+	for (int i = 0; i < mot.length(); i++) {
+		mot[i] = (char)tolower(mot[i]);
+	}
+	for (char mychar : mot) {
+		switch (mychar) {
+		case 'a':
+			nb++;
+			break;
+		case 'e':
+			nb++;
+			break;
+		case 'i':
+			nb++;
+			break;
+		case 'o':
+			nb++;
+			break;
+		case 'u':
+			nb++;
+			break;
+		case 'y':
+			nb++;
+			break;
+		default:
+			break;
+		}
+	}
+	return nb;
+}
+
+bool estUnPalindrome(string nom) {
+	string nom_inverse = "";
+	// On met le mot en minuscule pour éviter les conflits
+	for (int i = 0; i < nom.length(); i++) {
+		nom[i] = tolower(nom[i]);
+	}
+	for (int i = nom.length() - 1; i >= 0; i--) {
+		nom_inverse += nom[i];
+	}
+	if (nom_inverse == nom) {
+		return true;
+	}
+	return false;
+}
+
+// ============================================= SPECIFIQUES =============================================
 
 /*
 * ##################################################

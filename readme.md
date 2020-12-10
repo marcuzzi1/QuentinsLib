@@ -13,3 +13,13 @@
 > 2 : Assurez vous de compiler votre projet **C++** en `x64`
 
 ![Recordit GIF](http://recordit.co/I7HwKmvFdk.gif)
+
+> 3 : Entrez dans la fenêtre de propriétés de votre projet à l'aide d'un clic droit ou du raccourci `alt + enter` en pensant à mettre le projet concerné en focus (clic gauche dessus)
+
+![Recordit GIF](http://recordit.co/RJTudkHEhz.gif)
+
+> 4 : Se placer dans le menu `C/C++ -> Général`
+
+![Recordit GIF](http://recordit.co/JQtpSPPpIO.gif)
+
+>
