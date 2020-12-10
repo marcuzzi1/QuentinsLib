@@ -22,4 +22,6 @@
 
 ![Recordit GIF](http://recordit.co/JQtpSPPpIO.gif)
 
->
+> 5 : Modifier les propriétés de `Autres répertoires include` et remplacer le `C:\Users\Quentin...\QuentinsLib\QuentinsLib` par `Chemin_de_votre_téléchargement\QuentinsLib\QuentinsLib`
+
+![Recordit GIF](http://recordit.co/4TecHne6bd.gif)
