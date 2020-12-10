@@ -1,7 +1,7 @@
 /*
 * Librairie personnelle alimentée au fur et à mesure des tp nécessitant des procédures et fonctions pour le module
 * d'introduction à l'algorithmique.
-* 
+*
 * Auteur : Quentin Marcuzzi
 * Version : 2.0.0
 * Date de création : 01/10/2020
@@ -23,6 +23,7 @@
 using namespace std;
 #include<vector>
 
+// Attention, ce qui concerne la structure Date et les fonctions/procédures qui y sont associées sont peu recommandées à l'utilisation, préférez utiliser la classe d'objet DateItem
 // Définition d'une structure Date :
 typedef struct Date {
 	int day; // Jour compris entre 1 et 31 maximum
@@ -69,14 +70,54 @@ extern "C++" bool estUnPalindrome(string nom);
 // Menu :
 class Menu {
 	// Attributs :
-private :
+private:
 	vector<string> choix;
 
 	// Méthodes :
-public :
+public:
 	// Constructeur
 	Menu(vector<string> choix);
 	// Autre
 	void Afficher();
 	int EffectuerChoix();
+};
+
+// Bibliothèque :
+class Bibliotheque {
+	// Attributs :
+private:
+
+	// Méthodes :
+public :
+	
+};
+
+// Livre :
+class Livre {
+	// Attributs :
+private:
+
+	// Méthodes :
+public:
+
+};
+
+// Auteur :
+class Auteur {
+	// Attributs :
+private:
+	
+	// Méthodes :
+public:
+
+};
+
+// Date :
+class DateItem {
+	// Attributs :
+private:
+
+	// Méthodes :
+public:
+
 };
