@@ -25,3 +25,17 @@
 > 5 : Modifier les propriétés de `Autres répertoires include` et remplacer le `C:\Users\Quentin...\QuentinsLib\QuentinsLib` par `Chemin_de_votre_téléchargement\QuentinsLib\QuentinsLib`
 
 ![Recordit GIF](http://recordit.co/4TecHne6bd.gif)
+
+> 6 : Se placer dans `Editeur de liens -> Général` puis modifier le chemin de la même façon que précédemment
+
+![Recordit GIF](http://recordit.co/cb1Y1ULtoB.gif)
+
+> 7 : Enfin, ajoutez la dépendance
+
+![Recordit GIF](http://recordit.co/9dnesNkSN8.gif)
+
+> 8 : Vous pouvez importer la librairie !
+
+![Recordit GIF](http://recordit.co/ddFRYcx2b3.gif)
+
+> Enjoy 😉
