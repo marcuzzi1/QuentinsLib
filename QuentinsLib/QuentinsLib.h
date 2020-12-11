@@ -23,7 +23,7 @@
 using namespace std;
 #include<vector>
 
-// Attention, ce qui concerne la structure Date et les fonctions/procédures qui y sont associées sont peu recommandées à l'utilisation, préférez utiliser la classe d'objet DateItem
+// Attention, ce qui concerne la structure Date et les fonctions/procédures qui y sont associées sont peu recommandées à l'utilisation, préférez utiliser la classe d'objet DateTime
 // Définition d'une structure Date :
 typedef struct Date {
 	int day; // Jour compris entre 1 et 31 maximum
@@ -113,11 +113,15 @@ public:
 };
 
 // Date :
-class DateItem {
+class DateTime {
 	// Attributs :
 private:
-
+	int day, month, year, hour, minutes, seconds;
 	// Méthodes :
 public:
-
+	//Constructeur sans l'heure
+	DateTime(int day, int month, int year);
+	//Constructeur avec l'heure
+	//Autre 
+	bool ValidDate(int day, int month, int year);
 };
