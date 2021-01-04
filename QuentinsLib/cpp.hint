@@ -1,2 +1,3 @@
 #define QUENTINSLIB_API __declspec(dllexport)
 #define QUENTINSLIB_API __declspec(dllimport)
+#define _VCRUNTIME_DISABLED_WARNINGS

@@ -2,6 +2,10 @@
 //
 #include "pch.h"
 #include "QuentinsLib.h"
+#include<iostream>
+#include<algorithm>
+#include<stdarg.h>
+using namespace std;
 
 // ============================================= FONCTIONS MATHEMATIQUES =============================================
 
@@ -309,7 +313,7 @@ void SaisirDate(Date& date) {
 * #          Un booléen déterminant si les valeurs nulles sont acceptée ou non #
 * #          Une chaîne de caractères contenant le message à afficher          #
 * # Sortie : rien                                                              #
-* # Entrée/Sortie : le nombre réel à saisir                                    #
+* # Entrée/Sortie : le nombre entier à saisir                                  #
 * #                                                                            #
 * ##############################################################################
 */
@@ -444,6 +448,38 @@ bool estUnPalindrome(string nom) {
 	return false;
 }
 
+void AfficherTableauEntiers(vector<int> tab) {
+	for (int i = 0; i < tab.size(); i++) {
+		cout << tab[i];
+		if (i < tab.size() - 1) {
+			cout << " | ";
+		}
+	}
+	cout << endl;
+}
+
+void TriABulleTableauEntiers(vector<int>& tab) {
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	int passage = 0;
+	bool permut;
+	do {
+		permut = false;
+		for (int i = 0; i < tab.size() - 1 - passage; i++) {
+			try {
+				if (tab[i] >= tab[i + 1]) {
+					swap(tab[i], tab[i + 1]);
+					permut = true;
+				}
+			}
+			catch (exception e) {
+				cerr << "ERR : execution failed, aborting." << endl;
+				return; // Quitte de façon directe la procédure
+			}
+		}
+		passage++;
+	} while (permut);
+}
+
 // ============================================= SPECIFIQUES =============================================
 
 /*
@@ -484,18 +520,24 @@ void AfficherPyramide(int hauteur) {
 // Menu :
 /*
 * Cette classe sert à créer, afficher et effectuer des choix en allégeant le programme principal de l'affichage répétitif.
-* Pour l'instancier vous devez lui passer en paramètre un vector (tableau à dimension variable) contenant la liste des choix possibles.
+* Pour l'instancier vous devez lui passer en paramètre un 'vector' (tableau à dimension variable) contenant la liste des choix possibles.
 * Le traitement en fonction de ces choix est à faire dans votre programme principal.
 * La numérotation est automatique.
 * Pour effectuer un choix le menu utilise et retourne un entier.
 */
 Menu::Menu(vector<string> choix) {
+	this->titre = "Menu : ";
+	this->choix = choix;
+}
+
+Menu::Menu(string titre, vector<string> choix) {
+	this->titre = titre;
 	this->choix = choix;
 }
 
 void Menu::Afficher() {
 	locale::global(locale{ "" });
-	cout << "Menu :" << endl;
+	cout << this->titre << endl;
 	int num = 1;
 	for (string choice : this->choix) {
 		cout << num << ". " << choice << endl;

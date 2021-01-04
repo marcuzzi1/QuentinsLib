@@ -3,7 +3,7 @@
 * d'introduction à l'algorithmique.
 *
 * Auteur : Quentin Marcuzzi
-* Version : 2.0.0
+* Version : 2.3.0
 * Date de création : 01/10/2020
 */
 
@@ -23,9 +23,11 @@
 using namespace std;
 #include<vector>
 
-// Attention, ce qui concerne la structure Date et les fonctions/procédures qui y sont associées sont peu recommandées à l'utilisation, préférez utiliser la classe d'objet DateTime
+
+
+// Attention, ce qui concerne la structure Date et les fonctions/procédures qui y sont associées sont peu recommandées à l'utilisation, préférez utiliser la classe d'objet DateTime quand elle sera opérationnelle
 // Définition d'une structure Date :
-typedef struct Date {
+struct Date {
 	int day; // Jour compris entre 1 et 31 maximum
 	int month; // Mois compris entre 1 et 12
 	int year; // Année supérieure à 0
@@ -65,6 +67,10 @@ extern "C++" int SommeDiviseurs(int nombre);
 
 extern "C++" bool estUnPalindrome(string nom);
 
+extern "C++" void AfficherTableauEntiers(vector<int> tab);
+
+extern "C++" void TriABulleTableauEntiers(vector<int>&tab);
+
 // Classe d'objets
 
 // Menu :
@@ -72,44 +78,15 @@ class Menu {
 	// Attributs :
 private:
 	vector<string> choix;
-
+	string titre;
 	// Méthodes :
 public:
-	// Constructeur
+	// Constructeurs
 	Menu(vector<string> choix);
+	Menu(string titre, vector<string> choix);
 	// Autre
 	void Afficher();
 	int EffectuerChoix();
-};
-
-// Bibliothèque :
-class Bibliotheque {
-	// Attributs :
-private:
-
-	// Méthodes :
-public :
-	
-};
-
-// Livre :
-class Livre {
-	// Attributs :
-private:
-
-	// Méthodes :
-public:
-
-};
-
-// Auteur :
-class Auteur {
-	// Attributs :
-private:
-	
-	// Méthodes :
-public:
-
 };
 
 // Date :
@@ -122,6 +99,7 @@ public:
 	//Constructeur sans l'heure
 	DateTime(int day, int month, int year);
 	//Constructeur avec l'heure
+	DateTime(int day, int month, int year, int hour, int minutes, int seconds);
 	//Autre 
 	bool ValidDate(int day, int month, int year);
 };
