@@ -459,7 +459,6 @@ void AfficherTableauEntiers(vector<int> tab) {
 }
 
 void TriABulleTableauEntiers(vector<int>& tab) {
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	int passage = 0;
 	bool permut;
 	do {
